@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Learn the signs — SignBridge AI</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=Atkinson+Hyperlegible+Next:wght@400;700&family=Atkinson+Hyperlegible:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<header class="appbar">
+  <div class="brand">
+    <div class="brand-mark" aria-hidden="true">SB</div>
+    <div>
+      <h1>SignBridge AI</h1>
+      <p>Learn a sign, then try it on the translator</p>
+    </div>
+  </div>
+  <nav>
+    <a href="/">Translator</a>
+    <a href="/learn" class="active">Learn the signs</a>
+  </nav>
+</header>
+
+<main>
+  <div class="hero card">
+    <h2>Copy these signs in front of the camera</h2>
+    <p class="note" style="font-size:16px; line-height:24px">
+      Every clip below is signed by a deaf signer from the INCLUDE dataset. Press a tile to
+      play it on a loop, copy the movement, then <b>drop your hands and wait about a second</b>
+      so the system knows the sign has finished. After two seconds of stillness the English
+      sentence is built.
+    </p>
+    <div style="max-width:360px; margin-top:12px">
+      <label class="sr-only" for="q">Search a sign</label>
+      <input type="search" id="q" placeholder="Search a sign…">
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Sentences to try</h2>
+    <p class="note">Sign the words in this order, pausing between each one.</p>
+    <table class="phrases">
+      <tr><td class="sign">HELLO → HOW ARE YOU</td><td>Hello, how are you?</td></tr>
+      <tr><td class="sign">I → SICK → TODAY</td><td>I am sick today.</td></tr>
+      <tr><td class="sign">I → HOT → NIGHT</td><td>I have a fever at night.</td></tr>
+      <tr><td class="sign">I → WEAK → MORNING</td><td>I am weak in the morning.</td></tr>
+      <tr><td class="sign">I → COLD → NIGHT</td><td>I am feeling cold at night.</td></tr>
+      <tr><td class="sign">I → MEDICINE</td><td>I need medicine.</td></tr>
+      <tr><td class="sign">I → BATHROOM</td><td>I am going to the bathroom.</td></tr>
+      <tr><td class="sign">MOTHER → SICK → YESTERDAY</td><td>My mother was sick yesterday.</td></tr>
+      <tr><td class="sign">PATIENT → BED → WEAK</td><td>The patient is in bed and weak.</td></tr>
+      <tr><td class="sign">THANK YOU</td><td>Thank you.</td></tr>
+    </table>
+    <p class="note" style="margin-bottom:0">
+      ISL has no separate sign for several clinical words, so the nearest sign is read in
+      context: <b>HOT = fever</b>, <b>COLD = chills</b>, <b>BAD = not feeling well</b>.
+    </p>
+  </div>
+
+  <div class="card">
+    <h2 id="count">Sign library</h2>
+    <div class="grid" id="grid"></div>
+  </div>
+</main>
+
+<footer>
+  Reference videos: INCLUDE dataset (AI4Bharat), CC BY 4.0 — signed by deaf signers.
+</footer>
+
+<script>
+const grid = document.getElementById('grid');
+
+fetch('/gallery').then(r => r.json()).then(items => {
+  document.getElementById('count').textContent = 'Sign library — ' + items.length + ' signs';
+  items.forEach(it => {
+    const tile = document.createElement('div');
+    tile.className = 'tile';
+    tile.dataset.word = it.word;
+    const frame = document.createElement('button');
+    frame.className = 'frame';
+    frame.setAttribute('aria-label', 'Play the sign for ' + it.word.replace(/_/g, ' '));
+    frame.innerHTML = '<img src="/poster/' + it.word + '" alt="" loading="lazy">';
+    frame.onclick = () => {
+      if (frame.classList.contains('playing')) return;
+      const v = document.createElement('video');
+      v.muted = true;            // must be set before play() or autoplay is blocked
+      v.controls = true; v.loop = true; v.playsInline = true; v.preload = 'auto';
+      v.src = '/clip/' + it.word;
+      frame.classList.add('playing');
+      frame.innerHTML = '';
+      frame.appendChild(v);
+      v.play().catch(() => { v.controls = true; });   // user can press play if blocked
+    };
+    const word = document.createElement('div');
+    word.className = 'word';
+    word.textContent = it.word.toUpperCase().replace(/_/g, ' ');
+    const sub = document.createElement('div');
+    sub.className = 'sub';
+    sub.textContent = it.seconds + 's · tap to play';
+    tile.append(frame, word, sub);
+    grid.appendChild(tile);
+  });
+});
+
+document.getElementById('q').addEventListener('input', (e) => {
+  const q = e.target.value.toLowerCase().replace(/\s+/g, '_');
+  grid.querySelectorAll('.tile').forEach(t => {
+    t.style.display = t.dataset.word.includes(q) ? '' : 'none';
+  });
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SignBridge AI — live ISL translator</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=Atkinson+Hyperlegible+Next:wght@400;700&family=Atkinson+Hyperlegible:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<header class="appbar">
+  <div class="brand">
+    <div class="brand-mark" aria-hidden="true">SB</div>
+    <div>
+      <h1>SignBridge AI</h1>
+      <p>Indian Sign Language → English, live at the bedside</p>
+    </div>
+  </div>
+  <nav>
+    <a href="/" class="active">Translator</a>
+    <a href="/learn">Learn the signs</a>
+  </nav>
+</header>
+
+<main>
+  <div class="split">
+    <!-- ------------------------------------------------ camera column -->
+    <section>
+      <div class="card">
+        <div class="label">Patient camera</div>
+        <div class="stage">
+          <video id="cam" autoplay playsinline muted></video>
+          <div class="placeholder" id="placeholder">
+            Press <b>Start camera</b> and sign in front of the lens.<br>
+            Keep your head and both hands in view.
+          </div>
+          <div class="hud">
+            <span class="pill" id="hudState">waiting</span>
+            <span class="pill" id="hudPred" hidden></span>
+            <span class="pill" id="hudFps" hidden></span>
+          </div>
+        </div>
+        <div class="controls">
+          <button class="btn-primary" id="start">Start camera</button>
+          <button class="btn-secondary" id="finish">Finish sentence</button>
+          <button class="btn-secondary" id="speak">Speak aloud</button>
+          <button class="btn-danger" id="clear">Clear</button>
+        </div>
+        <p class="note" style="margin-bottom:0">
+          After each sign, drop your hands for about a second. Two seconds of stillness
+          completes the sentence.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="label">No camera? Test with a recorded clip</div>
+        <input type="file" id="file" accept="video/*" aria-label="Upload a sign language video">
+        <p class="note" id="fileNote" style="margin-bottom:0">
+          The clip runs through the same pipeline as the live camera.
+        </p>
+      </div>
+    </section>
+
+    <!-- -------------------------------------------- translation column -->
+    <section>
+      <div class="card" aria-live="polite">
+        <div class="label">Signs detected</div>
+        <div class="glosses" id="glosses"></div>
+        <div class="label" style="margin-top:20px">English for the doctor</div>
+        <div class="sentence" id="sentence"></div>
+        <div class="meta">
+          <span class="chip" id="chipState">waiting</span>
+          <span class="chip" id="chipSource" hidden></span>
+          <span class="chip" id="chipConn">connecting…</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="label">Doctor’s reply — shown large for the patient</div>
+        <div style="display:flex; gap:8px; flex-wrap:wrap; margin-top:8px">
+          <input type="text" id="reply" placeholder="Type your reply…"
+                 style="flex:1; min-width:220px" aria-label="Doctor's reply">
+          <button class="btn-primary" id="send">Show</button>
+        </div>
+        <div class="reply-out" id="replyOut"></div>
+        <p class="note" style="margin-bottom:0">
+          ISL has no separate sign for several clinical words, so the nearest sign is read in
+          context: <b>HOT = fever</b>, <b>COLD = chills</b>, <b>WEAK = weak or tired</b>,
+          <b>BAD = not feeling well</b>.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="label">Signs this model knows</div>
+        <p class="vocab" id="vocab">loading…</p>
+      </div>
+    </section>
+  </div>
+</main>
+
+<footer>
+  Assistive demo, not a medical device. Reference signs come from the INCLUDE dataset
+  (AI4Bharat, CC BY 4.0), performed by deaf signers.
+</footer>
+
+<script>
+const $ = (id) => document.getElementById(id);
+const cam = $('cam'), glossBox = $('glosses'), sentenceBox = $('sentence');
+let ws, sending = false, shownGlosses = [];
+const canvas = document.createElement('canvas'), ctx = canvas.getContext('2d');
+
+function setConn(state, text) {
+  const chip = $('chipConn');
+  chip.textContent = text;
+  chip.className = 'chip ' + state;
+}
+
+function renderGlosses(list) {
+  if (JSON.stringify(list) === JSON.stringify(shownGlosses)) return;
+  glossBox.innerHTML = '';
+  list.forEach(g => {
+    const el = document.createElement('span');
+    el.className = 'gloss';
+    el.textContent = g.toUpperCase().replace(/_/g, ' ');
+    glossBox.appendChild(el);
+  });
+  shownGlosses = list.slice();
+}
+
+function speak(text) {
+  if (!text) return;
+  try {
+    const u = new SpeechSynthesisUtterance(text);
+    u.lang = 'en-IN';
+    speechSynthesis.cancel();
+    speechSynthesis.speak(u);
+  } catch (e) { /* speech is a bonus, never block the demo */ }
+}
+
+function connect() {
+  ws = new WebSocket((location.protocol === 'https:' ? 'wss://' : 'ws://') + location.host + '/ws');
+  ws.onopen = () => setConn('live', 'connected');
+  ws.onclose = () => { setConn('err', 'reconnecting…'); setTimeout(connect, 1500); };
+  ws.onmessage = (e) => {
+    const d = JSON.parse(e.data);
+    if (d.vocab) {
+      $('vocab').textContent = d.vocab.map(w => w.replace(/_/g, ' ')).join(' · ');
+      return;
+    }
+    renderGlosses(d.glosses);
+    if (d.sentence) sentenceBox.textContent = d.sentence;
+    $('chipState').textContent = d.state;
+    $('chipState').className = 'chip ' + (d.state === 'signing' ? 'live' : '');
+    $('hudState').textContent = d.state;
+    $('hudState').className = 'pill ' + (d.state === 'signing' ? 'live' : '');
+    if (d.last) {
+      const pct = Math.round(d.last.prob * 100);
+      $('hudPred').hidden = false;
+      $('hudPred').textContent = d.last.label.replace(/_/g, ' ') + ' ' + pct + '%';
+      $('hudPred').className = 'pill ' + (pct < 50 ? 'warn' : '');
+    }
+    if (d.fps) { $('hudFps').hidden = false; $('hudFps').textContent = d.fps.toFixed(0) + ' fps'; }
+    if (d.spoke && d.sentence) speak(d.sentence);
+  };
+}
+
+$('start').onclick = async () => {
+  try {
+    const stream = await navigator.mediaDevices.getUserMedia({ video: { width: 640, height: 480 } });
+    cam.srcObject = stream;
+    $('placeholder').hidden = true;
+    $('start').textContent = 'Camera running';
+    $('start').disabled = true;
+    sending = true;
+    pump();
+  } catch (err) {
+    $('placeholder').innerHTML = 'Camera blocked: ' + err.message +
+      '<br>Allow camera access, or use the video file option below.';
+  }
+};
+$('clear').onclick = () => { ws.send(JSON.stringify({ cmd: 'clear' })); sentenceBox.textContent = ''; renderGlosses([]); };
+$('finish').onclick = () => ws.send(JSON.stringify({ cmd: 'finish' }));
+$('speak').onclick = () => speak(sentenceBox.textContent);
+$('send').onclick = () => {
+  const t = $('reply').value.trim();
+  if (!t) return;
+  $('replyOut').textContent = t;
+  speak(t);
+  $('reply').value = '';
+};
+$('reply').addEventListener('keydown', e => { if (e.key === 'Enter') $('send').click(); });
+
+$('file').onchange = async (e) => {
+  const f = e.target.files[0];
+  if (!f) return;
+  $('fileNote').textContent = 'Processing ' + f.name + '…';
+  const fd = new FormData();
+  fd.append('file', f);
+  const r = await fetch('/video', { method: 'POST', body: fd });
+  const d = await r.json();
+  renderGlosses(d.glosses);
+  sentenceBox.textContent = d.sentence || '(nothing recognised)';
+  $('chipSource').hidden = false;
+  $('chipSource').textContent = 'from file · ' + d.source;
+  $('fileNote').textContent = 'Done. ' + d.segments.length + ' segments analysed.';
+  speak(d.sentence);
+};
+
+async function pump() {
+  if (!sending || !ws || ws.readyState !== 1) { setTimeout(pump, 120); return; }
+  canvas.width = 640; canvas.height = 480;          // MediaPipe needs hand detail
+  ctx.drawImage(cam, 0, 0, canvas.width, canvas.height);
+  ws.send(JSON.stringify({ frame: canvas.toDataURL('image/jpeg', 0.7) }));
+  setTimeout(pump, 70);                              // about 14 fps
+}
+
+connect();
+</script>
+</body>
+</html>
