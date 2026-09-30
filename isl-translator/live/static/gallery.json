@@ -1,0 +1,866 @@
+[
+ {
+  "word": "afternoon",
+  "file": "MVI_5513.MOV",
+  "dir": "videos",
+  "seconds": 1.5,
+  "poster": true,
+  "in_model": true,
+  "source": "INCLUDE"
+ },
+ {
+  "word": "alive",
+  "file": "MVI_9703.MOV",
+  "dir": "videos",
+  "seconds": 1.8,
+  "poster": true,
+  "in_model": true,
+  "source": "INCLUDE"
+ },
+ {
+  "word": "alright",
+  "file": "MVI_0043.MOV",
+  "dir": "videos",
+  "seconds": 2.2,
+  "poster": true,
+  "in_model": true,
+  "source": "INCLUDE"
+ },
+ {
+  "word": "baby",
+  "file": "MVI_3770.MOV",
+  "dir": "videos",
+  "seconds": 1.8,
+  "poster": true,
+  "in_model": true,
+  "source": "INCLUDE"
+ },
+ {
+  "word": "bad",
+  "file": "MVI_9354.MOV",
+  "dir": "videos",
+  "seconds": 1.6,
+  "poster": true,
+  "in_model": true,
+  "source": "INCLUDE"
+ },
+ {
+  "word": "bathroom",
+  "file": "MVI_9025.MP4",
+  "dir": "videos",
+  "seconds": 2.7,
+  "poster": true,
+  "in_model": true,
+  "source": "INCLUDE"
+ },
+ {
+  "word": "bed",
+  "file": "MVI_8761.MP4",
+  "dir": "videos",
+  "seconds": 2.6,
+  "poster": true,
+  "in_model": true,
+  "source": "INCLUDE"
+ },
+ {
+  "word": "big_large",
+  "file": "MVI_9233.MOV",
+  "dir": "videos",
+  "seconds": 1.9,
+  "poster": true,
+  "in_model": true,
+  "source": "INCLUDE"
+ },
+ {
+  "word": "blind",
+  "file": "MVI_9586.MOV",
+  "dir": "videos",
+  "seconds": 2.1,
+  "poster": true,
+  "in_model": true,
+  "source": "INCLUDE"
+ },
+ {
+  "word": "boy",
+  "file": "MVI_3816.MOV",
+  "dir": "videos",
+  "seconds": 2.2,
+  "poster": true,
+  "in_model": true,
+  "source": "INCLUDE"
+ },
+ {
+  "word": "cold",
+  "file": "MVI_9331.MOV",
+  "dir": "videos",
+  "seconds": 1.9,
+  "poster": true,
+  "in_model": true,
+  "source": "INCLUDE"
+ },
+ {
+  "word": "dead",
+  "file": "MVI_9700.MOV",
+  "dir": "videos",
+  "seconds": 2.0,
+  "poster": true,
+  "in_model": true,
+  "source": "INCLUDE"
+ },
+ {
+  "word": "deaf",
+  "file": "MVI_9851.MOV",
+  "dir": "videos",
+  "seconds": 2.0,
+  "poster": true,
+  "in_model": true,
+  "source": "INCLUDE"
+ },
+ {
+  "word": "doctor",
+  "file": "MVI_8875.MP4",
+  "dir": "videos",
+  "seconds": 2.3,
+  "poster": true,
+  "in_model": true,
+  "source": "INCLUDE"
+ },
+ {
+  "word": "evening",
+  "file": "MVI_4660.MOV",
+  "dir": "videos",
+  "seconds": 1.9,
+  "poster": true,
+  "in_model": true,
+  "source": "INCLUDE"
+ },
+ {
+  "word": "family",
+  "file": "MVI_4232.MOV",
+  "dir": "videos",
+  "seconds": 2.0,
+  "poster": true,
+  "in_model": true,
+  "source": "INCLUDE"
+ },
+ {
+  "word": "fast",
+  "file": "MVI_9244.MOV",
+  "dir": "videos",
+  "seconds": 1.8,
+  "poster": true,
+  "in_model": true,
+  "source": "INCLUDE"
+ },
+ {
+  "word": "father",
+  "file": "MVI_8626.MP4",
+  "dir": "videos",
+  "seconds": 2.6,
+  "poster": true,
+  "in_model": true,
+  "source": "INCLUDE"
+ },
+ {
+  "word": "friday",
+  "file": "MVI_5462.MOV",
+  "dir": "videos",
+  "seconds": 1.8,
+  "poster": true,
+  "in_model": true,
+  "source": "INCLUDE"
+ },
+ {
+  "word": "friend",
+  "file": "MVI_8648.MP4",
+  "dir": "videos",
+  "seconds": 2.4,
+  "poster": true,
+  "in_model": true,
+  "source": "INCLUDE"
+ },
+ {
+  "word": "girl",
+  "file": "MVI_3817.MOV",
+  "dir": "videos",
+  "seconds": 2.0,
+  "poster": true,
+  "in_model": true,
+  "source": "INCLUDE"
+ },
+ {
+  "word": "good",
+  "file": "MVI_9349.MOV",
+  "dir": "videos",
+  "seconds": 1.6,
+  "poster": true,
+  "in_model": true,
+  "source": "INCLUDE"
+ },
+ {
+  "word": "good_morning",
+  "file": "MVI_0048.MOV",
+  "dir": "videos",
+  "seconds": 1.6,
+  "poster": true,
+  "in_model": true,
+  "source": "INCLUDE"
+ },
+ {
+  "word": "good_night",
+  "file": "MVI_0002.MOV",
+  "dir": "videos",
+  "seconds": 2.2,
+  "poster": true,
+  "in_model": true,
+  "source": "INCLUDE"
+ },
+ {
+  "word": "grandfather",
+  "file": "MVI_3792.MOV",
+  "dir": "videos",
+  "seconds": 3.0,
+  "poster": true,
+  "in_model": true,
+  "source": "INCLUDE"
+ },
+ {
+  "word": "grandmother",
+  "file": "MVI_3793.MOV",
+  "dir": "videos",
+  "seconds": 2.6,
+  "poster": true,
+  "in_model": true,
+  "source": "INCLUDE"
+ },
+ {
+  "word": "he",
+  "file": "MVI_0018.MOV",
+  "dir": "videos",
+  "seconds": 1.7,
+  "poster": true,
+  "in_model": true,
+  "source": "INCLUDE"
+ },
+ {
+  "word": "healthy",
+  "file": "MVI_9367.MOV",
+  "dir": "videos",
+  "seconds": 2.0,
+  "poster": true,
+  "in_model": true,
+  "source": "INCLUDE"
+ },
+ {
+  "word": "hello",
+  "file": "MVI_9984.MOV",
+  "dir": "videos",
+  "seconds": 1.9,
+  "poster": true,
+  "in_model": true,
+  "source": "INCLUDE"
+ },
+ {
+  "word": "hospital",
+  "file": "MVI_3639.MOV",
+  "dir": "videos",
+  "seconds": 2.2,
+  "poster": true,
+  "in_model": true,
+  "source": "INCLUDE"
+ },
+ {
+  "word": "hot",
+  "file": "MVI_9248.MOV",
+  "dir": "videos",
+  "seconds": 1.9,
+  "poster": true,
+  "in_model": true,
+  "source": "INCLUDE"
+ },
+ {
+  "word": "house",
+  "file": "MVI_3515.MOV",
+  "dir": "videos",
+  "seconds": 1.8,
+  "poster": true,
+  "in_model": true,
+  "source": "INCLUDE"
+ },
+ {
+  "word": "how_are_you",
+  "file": "MVI_0040.MOV",
+  "dir": "videos",
+  "seconds": 2.4,
+  "poster": true,
+  "in_model": true,
+  "source": "INCLUDE"
+ },
+ {
+  "word": "i",
+  "file": "MVI_0013.MOV",
+  "dir": "videos",
+  "seconds": 1.7,
+  "poster": true,
+  "in_model": true,
+  "source": "INCLUDE"
+ },
+ {
+  "word": "man",
+  "file": "MVI_3774.MOV",
+  "dir": "videos",
+  "seconds": 1.9,
+  "poster": true,
+  "in_model": true,
+  "source": "INCLUDE"
+ },
+ {
+  "word": "market",
+  "file": "MVI_3325.MOV",
+  "dir": "videos",
+  "seconds": 2.5,
+  "poster": true,
+  "in_model": true,
+  "source": "INCLUDE"
+ },
+ {
+  "word": "medicine",
+  "file": "MVI_8934.MP4",
+  "dir": "videos",
+  "seconds": 2.3,
+  "poster": true,
+  "in_model": true,
+  "source": "INCLUDE"
+ },
+ {
+  "word": "minute",
+  "file": "MVI_5501.MOV",
+  "dir": "videos",
+  "seconds": 1.4,
+  "poster": true,
+  "in_model": true,
+  "source": "INCLUDE"
+ },
+ {
+  "word": "monday",
+  "file": "MVI_5009.MOV",
+  "dir": "videos",
+  "seconds": 1.9,
+  "poster": true,
+  "in_model": true,
+  "source": "INCLUDE"
+ },
+ {
+  "word": "money",
+  "file": "MVI_8938.MP4",
+  "dir": "videos",
+  "seconds": 2.2,
+  "poster": true,
+  "in_model": true,
+  "source": "INCLUDE"
+ },
+ {
+  "word": "month",
+  "file": "MVI_4633.MOV",
+  "dir": "videos",
+  "seconds": 2.1,
+  "poster": true,
+  "in_model": true,
+  "source": "INCLUDE"
+ },
+ {
+  "word": "morning",
+  "file": "MVI_5507.MOV",
+  "dir": "videos",
+  "seconds": 1.6,
+  "poster": true,
+  "in_model": true,
+  "source": "INCLUDE"
+ },
+ {
+  "word": "mother",
+  "file": "MVI_8625.MP4",
+  "dir": "videos",
+  "seconds": 2.4,
+  "poster": true,
+  "in_model": true,
+  "source": "INCLUDE"
+ },
+ {
+  "word": "night",
+  "file": "MVI_5521.MOV",
+  "dir": "videos",
+  "seconds": 1.4,
+  "poster": true,
+  "in_model": true,
+  "source": "INCLUDE"
+ },
+ {
+  "word": "old",
+  "file": "MVI_5310.MOV",
+  "dir": "videos",
+  "seconds": 1.6,
+  "poster": true,
+  "in_model": true,
+  "source": "INCLUDE"
+ },
+ {
+  "word": "patient",
+  "file": "MVI_8878.MP4",
+  "dir": "videos",
+  "seconds": 2.7,
+  "poster": true,
+  "in_model": true,
+  "source": "INCLUDE"
+ },
+ {
+  "word": "saturday",
+  "file": "MVI_5027.MOV",
+  "dir": "videos",
+  "seconds": 1.8,
+  "poster": true,
+  "in_model": true,
+  "source": "INCLUDE"
+ },
+ {
+  "word": "school",
+  "file": "MVI_3537.MOV",
+  "dir": "videos",
+  "seconds": 1.7,
+  "poster": true,
+  "in_model": true,
+  "source": "INCLUDE"
+ },
+ {
+  "word": "she",
+  "file": "MVI_0021.MOV",
+  "dir": "videos",
+  "seconds": 1.6,
+  "poster": true,
+  "in_model": true,
+  "source": "INCLUDE"
+ },
+ {
+  "word": "sick",
+  "file": "MVI_9363.MOV",
+  "dir": "videos",
+  "seconds": 1.8,
+  "poster": true,
+  "in_model": true,
+  "source": "INCLUDE"
+ },
+ {
+  "word": "slow",
+  "file": "MVI_5290.MOV",
+  "dir": "videos",
+  "seconds": 2.1,
+  "poster": true,
+  "in_model": true,
+  "source": "INCLUDE"
+ },
+ {
+  "word": "small_little",
+  "file": "MVI_5288.MOV",
+  "dir": "videos",
+  "seconds": 1.5,
+  "poster": true,
+  "in_model": true,
+  "source": "INCLUDE"
+ },
+ {
+  "word": "strong",
+  "file": "MVI_9817.MOV",
+  "dir": "videos",
+  "seconds": 1.9,
+  "poster": true,
+  "in_model": true,
+  "source": "INCLUDE"
+ },
+ {
+  "word": "sunday",
+  "file": "MVI_5008.MOV",
+  "dir": "videos",
+  "seconds": 1.9,
+  "poster": true,
+  "in_model": true,
+  "source": "INCLUDE"
+ },
+ {
+  "word": "telephone",
+  "file": "MVI_4428.MOV",
+  "dir": "videos",
+  "seconds": 1.6,
+  "poster": true,
+  "in_model": true,
+  "source": "INCLUDE"
+ },
+ {
+  "word": "thank_you",
+  "file": "MVI_9950.MOV",
+  "dir": "videos",
+  "seconds": 2.1,
+  "poster": true,
+  "in_model": true,
+  "source": "INCLUDE"
+ },
+ {
+  "word": "they",
+  "file": "MVI_0027.MOV",
+  "dir": "videos",
+  "seconds": 2.9,
+  "poster": true,
+  "in_model": true,
+  "source": "INCLUDE"
+ },
+ {
+  "word": "thursday",
+  "file": "MVI_5460.MOV",
+  "dir": "videos",
+  "seconds": 1.9,
+  "poster": true,
+  "in_model": true,
+  "source": "INCLUDE"
+ },
+ {
+  "word": "time",
+  "file": "MVI_5524.MOV",
+  "dir": "videos",
+  "seconds": 1.5,
+  "poster": true,
+  "in_model": true,
+  "source": "INCLUDE"
+ },
+ {
+  "word": "today",
+  "file": "MVI_5032.MOV",
+  "dir": "videos",
+  "seconds": 1.6,
+  "poster": true,
+  "in_model": true,
+  "source": "INCLUDE"
+ },
+ {
+  "word": "tomorrow",
+  "file": "MVI_5034.MOV",
+  "dir": "videos",
+  "seconds": 1.6,
+  "poster": true,
+  "in_model": true,
+  "source": "INCLUDE"
+ },
+ {
+  "word": "tuesday",
+  "file": "MVI_5452.MOV",
+  "dir": "videos",
+  "seconds": 2.0,
+  "poster": true,
+  "in_model": true,
+  "source": "INCLUDE"
+ },
+ {
+  "word": "we",
+  "file": "MVI_0018.MOV",
+  "dir": "videos",
+  "seconds": 3.2,
+  "poster": true,
+  "in_model": true,
+  "source": "INCLUDE"
+ },
+ {
+  "word": "weak",
+  "file": "MVI_9818.MOV",
+  "dir": "videos",
+  "seconds": 2.2,
+  "poster": true,
+  "in_model": true,
+  "source": "INCLUDE"
+ },
+ {
+  "word": "wednesday",
+  "file": "MVI_4602.MOV",
+  "dir": "videos",
+  "seconds": 2.0,
+  "poster": true,
+  "in_model": true,
+  "source": "INCLUDE"
+ },
+ {
+  "word": "week",
+  "file": "MVI_4629.MOV",
+  "dir": "videos",
+  "seconds": 2.3,
+  "poster": true,
+  "in_model": true,
+  "source": "INCLUDE"
+ },
+ {
+  "word": "woman",
+  "file": "MVI_4229.MOV",
+  "dir": "videos",
+  "seconds": 1.8,
+  "poster": true,
+  "in_model": true,
+  "source": "INCLUDE"
+ },
+ {
+  "word": "yesterday",
+  "file": "MVI_5478.MOV",
+  "dir": "videos",
+  "seconds": 1.6,
+  "poster": true,
+  "in_model": true,
+  "source": "INCLUDE"
+ },
+ {
+  "word": "you",
+  "file": "MVI_9888.MOV",
+  "dir": "videos",
+  "seconds": 1.6,
+  "poster": true,
+  "in_model": true,
+  "source": "INCLUDE"
+ },
+ {
+  "word": "young",
+  "file": "MVI_9265.MOV",
+  "dir": "videos",
+  "seconds": 1.7,
+  "poster": true,
+  "in_model": true,
+  "source": "INCLUDE"
+ },
+ {
+  "word": "brother",
+  "file": "MVI_4955.MOV",
+  "dir": "reference_only",
+  "seconds": 1.6,
+  "poster": true,
+  "in_model": false,
+  "source": "symptom demo"
+ },
+ {
+  "word": "child",
+  "file": "MVI_4992.MOV",
+  "dir": "reference_only",
+  "seconds": 1.5,
+  "poster": true,
+  "in_model": false,
+  "source": "symptom demo"
+ },
+ {
+  "word": "cough",
+  "file": "cough_demo.mp4",
+  "dir": "reference_only",
+  "seconds": 1.9,
+  "poster": true,
+  "in_model": true,
+  "source": "symptom demo"
+ },
+ {
+  "word": "daughter",
+  "file": "MVI_3757.MOV",
+  "dir": "reference_only",
+  "seconds": 1.6,
+  "poster": true,
+  "in_model": false,
+  "source": "symptom demo"
+ },
+ {
+  "word": "fever",
+  "file": "fever_demo.mp4",
+  "dir": "reference_only",
+  "seconds": 1.9,
+  "poster": true,
+  "in_model": true,
+  "source": "symptom demo"
+ },
+ {
+  "word": "happy",
+  "file": "MVI_9376.MOV",
+  "dir": "reference_only",
+  "seconds": 1.4,
+  "poster": true,
+  "in_model": false,
+  "source": "symptom demo"
+ },
+ {
+  "word": "headache",
+  "file": "headache_demo.mp4",
+  "dir": "reference_only",
+  "seconds": 2.9,
+  "poster": true,
+  "in_model": true,
+  "source": "symptom demo"
+ },
+ {
+  "word": "hour",
+  "file": "MVI_9181.MP4",
+  "dir": "reference_only",
+  "seconds": 2.4,
+  "poster": true,
+  "in_model": false,
+  "source": "symptom demo"
+ },
+ {
+  "word": "husband",
+  "file": "MVI_5262.MOV",
+  "dir": "reference_only",
+  "seconds": 1.8,
+  "poster": true,
+  "in_model": false,
+  "source": "symptom demo"
+ },
+ {
+  "word": "nausea",
+  "file": "nausea_demo.mp4",
+  "dir": "reference_only",
+  "seconds": 1.9,
+  "poster": true,
+  "in_model": true,
+  "source": "symptom demo"
+ },
+ {
+  "word": "runny_nose",
+  "file": "runny_nose_demo.mp4",
+  "dir": "reference_only",
+  "seconds": 1.9,
+  "poster": true,
+  "in_model": true,
+  "source": "symptom demo"
+ },
+ {
+  "word": "sad",
+  "file": "MVI_9567.MOV",
+  "dir": "reference_only",
+  "seconds": 2.4,
+  "poster": true,
+  "in_model": false,
+  "source": "symptom demo"
+ },
+ {
+  "word": "sister",
+  "file": "MVI_4959.MOV",
+  "dir": "reference_only",
+  "seconds": 1.7,
+  "poster": true,
+  "in_model": false,
+  "source": "symptom demo"
+ },
+ {
+  "word": "son",
+  "file": "MVI_8623.MP4",
+  "dir": "reference_only",
+  "seconds": 2.8,
+  "poster": true,
+  "in_model": false,
+  "source": "symptom demo"
+ },
+ {
+  "word": "sore_throat",
+  "file": "sore_throat_demo.mp4",
+  "dir": "reference_only",
+  "seconds": 2.9,
+  "poster": true,
+  "in_model": true,
+  "source": "symptom demo"
+ },
+ {
+  "word": "stomach_ache",
+  "file": "stomach_ache_demo.mp4",
+  "dir": "reference_only",
+  "seconds": 2.9,
+  "poster": true,
+  "in_model": true,
+  "source": "symptom demo"
+ },
+ {
+  "word": "tired",
+  "file": "tired_demo.mp4",
+  "dir": "reference_only",
+  "seconds": 2.9,
+  "poster": true,
+  "in_model": true,
+  "source": "symptom demo"
+ },
+ {
+  "word": "trouble_breathing",
+  "file": "trouble_breathing_demo.mp4",
+  "dir": "reference_only",
+  "seconds": 1.9,
+  "poster": true,
+  "in_model": true,
+  "source": "symptom demo"
+ },
+ {
+  "word": "wife",
+  "file": "MVI_8639.MP4",
+  "dir": "reference_only",
+  "seconds": 2.4,
+  "poster": true,
+  "in_model": false,
+  "source": "symptom demo"
+ },
+ {
+  "word": "year",
+  "file": "MVI_5048.MOV",
+  "dir": "reference_only",
+  "seconds": 1.5,
+  "poster": true,
+  "in_model": false,
+  "source": "symptom demo"
+ },
+ {
+  "word": "come",
+  "file": "take.webm",
+  "dir": "reference_self",
+  "seconds": -9223372036854776.0,
+  "poster": true,
+  "in_model": true,
+  "source": "your own take"
+ },
+ {
+  "word": "drink",
+  "file": "take.webm",
+  "dir": "reference_self",
+  "seconds": -9223372036854776.0,
+  "poster": true,
+  "in_model": true,
+  "source": "your own take"
+ },
+ {
+  "word": "eat",
+  "file": "take.webm",
+  "dir": "reference_self",
+  "seconds": -9223372036854776.0,
+  "poster": true,
+  "in_model": true,
+  "source": "your own take"
+ },
+ {
+  "word": "finish",
+  "file": "take.webm",
+  "dir": "reference_self",
+  "seconds": -9223372036854776.0,
+  "poster": true,
+  "in_model": true,
+  "source": "your own take"
+ },
+ {
+  "word": "give",
+  "file": "take.webm",
+  "dir": "reference_self",
+  "seconds": -9223372036854776.0,
+  "poster": true,
+  "in_model": true,
+  "source": "your own take"
+ },
+ {
+  "word": "no",
+  "file": "take.webm",
+  "dir": "reference_self",
+  "seconds": -9223372036854776.0,
+  "poster": true,
+  "in_model": true,
+  "source": "your own take"
+ }
+]

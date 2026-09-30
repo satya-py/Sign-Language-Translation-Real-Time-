@@ -1,0 +1,120 @@
+{
+ "_comment": [
+  "The INCLUDE words added in round 2. The model learned these from the dataset,",
+  "so they work without anyone recording them - but a sign the sentence engine",
+  "does not know comes out as a bare word, so every one of them is listed here."
+ ],
+ "time": {
+  "monday": {
+   "phrase": "on Monday",
+   "tense": "present",
+   "taught": true
+  },
+  "tuesday": {
+   "phrase": "on Tuesday",
+   "tense": "present",
+   "taught": true
+  },
+  "wednesday": {
+   "phrase": "on Wednesday",
+   "tense": "present",
+   "taught": true
+  },
+  "thursday": {
+   "phrase": "on Thursday",
+   "tense": "present",
+   "taught": true
+  },
+  "friday": {
+   "phrase": "on Friday",
+   "tense": "present",
+   "taught": true
+  },
+  "saturday": {
+   "phrase": "on Saturday",
+   "tense": "present",
+   "taught": true
+  },
+  "sunday": {
+   "phrase": "on Sunday",
+   "tense": "present",
+   "taught": true
+  },
+  "afternoon": {
+   "phrase": "in the afternoon",
+   "tense": "present",
+   "taught": true
+  }
+ },
+ "duration": {
+  "minute": {
+   "one": "minute",
+   "many": "minutes",
+   "taught": true
+  }
+ },
+ "person": {
+  "man": {
+   "name": "the man",
+   "taught": true
+  },
+  "woman": {
+   "name": "the woman",
+   "taught": true
+  },
+  "boy": {
+   "name": "the boy",
+   "taught": true
+  },
+  "girl": {
+   "name": "the girl",
+   "taught": true
+  },
+  "grandmother": {
+   "name": "my grandmother",
+   "taught": true
+  },
+  "grandfather": {
+   "name": "my grandfather",
+   "taught": true
+  }
+ },
+ "polite": {
+  "good_morning": {
+   "fixed": "Good morning.",
+   "taught": true
+  },
+  "good_night": {
+   "fixed": "Good night.",
+   "taught": true
+  }
+ },
+ "answer": {
+  "alright": {
+   "fixed": "All right.",
+   "taught": true
+  }
+ },
+ "state": {
+  "slow": {
+   "phrase": "slow",
+   "taught": true,
+   "describes_symptom": true
+  },
+  "fast": {
+   "phrase": "fast",
+   "taught": true,
+   "describes_symptom": true
+  },
+  "big_large": {
+   "phrase": "big",
+   "taught": true,
+   "describes_symptom": true
+  },
+  "small_little": {
+   "phrase": "small",
+   "taught": true,
+   "describes_symptom": true
+  }
+ }
+}

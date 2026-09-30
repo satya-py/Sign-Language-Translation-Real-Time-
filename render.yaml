@@ -1,0 +1,36 @@
+# Render blueprint for the SignBridge backend.
+#
+# Render reads this when you connect the repository as a Blueprint, so the
+# service is created with the right build, the right health check and the right
+# environment instead of being clicked together by hand.
+#
+# The plan matters. MediaPipe and torch together need about a gigabyte before the
+# first frame is answered; on a 512 MB instance the service starts, passes its
+# health check, and then dies the moment someone signs at it. See the README.
+
+services:
+  - type: web
+    name: signbridge-backend
+    runtime: docker
+    # The Dockerfile sits in isl-translator/ and needs that whole folder as its
+    # context: the API imports the recogniser from live/ and the letter models
+    # from fingerspell/.
+    dockerfilePath: ./isl-translator/Dockerfile
+    dockerContext: ./isl-translator
+    plan: standard            # 2 GB. "free" and "starter" are 512 MB and will not run this.
+    region: singapore         # closest to India; change if your users are elsewhere
+    healthCheckPath: /api/health
+    autoDeploy: true
+    envVars:
+      # Where the frontend is hosted. Without it the browser blocks every
+      # response, and the server log shows nothing at all.
+      - key: ALLOWED_ORIGINS
+        sync: false           # set this in the Render dashboard after Vercel gives you the URL
+      # An LLM polishes the sentences when a key is present; the rule grammar is
+      # used when it is not, and that is what the measured numbers were taken on.
+      - key: GROQ_API_KEY
+        sync: false
+      - key: ANTHROPIC_API_KEY
+        sync: false
+      - key: PYTHONUNBUFFERED
+        value: "1"

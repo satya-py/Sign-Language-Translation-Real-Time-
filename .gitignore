@@ -1,0 +1,84 @@
+# What must never reach GitHub, and why.
+#
+# This working folder is about 31 GB. Almost none of it belongs in a repository:
+# the dataset videos, two virtual environments and the INCLUDE download make up
+# all of it. What is committed is the code, the trained models (3 MB and 250 kB),
+# the keypoint recordings that let someone retrain, and the poster images the
+# Learn page needs.
+
+# ---------------------------------------------------------------- environments
+venv/
+.venv/
+env/
+INCLUDE/venv/
+isl-translator/fingerspell/action_venv/
+*.egg-info/
+
+# ------------------------------------------------------------------- node/vite
+node_modules/
+dist/
+.vite/
+*.local
+
+# ------------------------------------------------------------------- python
+__pycache__/
+*.py[cod]
+*.so
+.pytest_cache/
+.ipynb_checkpoints/
+
+# ------------------------------------------------------- video and raw datasets
+# 11 GB of INCLUDE clips, downloaded with live/fetch_videos.py - the README says
+# how to fetch them again.
+isl-translator/live/data/videos/
+isl-translator/live/data/keypoints/
+isl-translator/live/data/reference_only/
+isl-translator/live/reference/
+isl-translator/live/demo/
+isl-translator/live.zip
+isl-translator/**/MP_Data/
+*.mp4
+*.MOV
+*.MP4
+*.avi
+*.zip
+
+# The signer's own reference takes are video of a person; keep them local unless
+# the person whose face is in them decides otherwise.
+isl-translator/live/data/reference_self/
+
+# The INCLUDE project and its 196 MB checkpoint are someone else's work and are
+# downloaded, not authored here.
+INCLUDE/
+
+# ------------------------------------------------------------------- artefacts
+isl-translator/live/models/*_previous.pt
+isl-translator/live/models/*_reverted.pt
+isl-translator/live/models/try_*.pt
+# Older copies of the same weights: signs.pt is the one the app loads, and on a
+# slow connection each spare 3 MB checkpoint is another minute of upload.
+isl-translator/live/models/signs_best87.pt
+isl-translator/live/models/signs_round1.pt
+isl-translator/fingerspell/models/letters_random.pt
+isl-translator/fingerspell/models/letters_round1.pt
+isl-translator/fingerspell/models/letters_time.pt
+isl-translator/live/models/_debug*
+isl-translator/live/models/partial*
+isl-translator/live/logs/
+isl-translator/**/Logs/
+isl-translator/backend/data/sessions.json
+isl-translator/fingerspell/data/letters_asrecorded_backup/
+isl-translator/fingerspell/action_check.json
+
+# ---------------------------------------------------------------------- secrets
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+
+# ------------------------------------------------------------------------- os
+.DS_Store
+Thumbs.db
+desktop.ini
+*.log

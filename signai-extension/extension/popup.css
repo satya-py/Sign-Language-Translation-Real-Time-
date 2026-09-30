@@ -1,0 +1,142 @@
+/* SignAI popup. Narrow, quiet, and readable at a glance during a call. */
+
+:root {
+  --ink: #0d1b2a;
+  --muted: #5a6b7b;
+  --line: #e3e9ef;
+  --teal: #0f9b8e;
+  --teal-dark: #0b7d73;
+  --warn: #b4530a;
+  --bad: #b3261e;
+  --bg: #f7f9fb;
+  --card: #ffffff;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  width: 360px;
+  margin: 0;
+  padding: 12px;
+  background: var(--bg);
+  color: var(--ink);
+  font: 14px/1.45 "Segoe UI", system-ui, -apple-system, sans-serif;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.mark {
+  width: 36px; height: 36px;
+  border-radius: 10px;
+  background: var(--teal);
+  color: #fff;
+  font-size: 12px; font-weight: 700; letter-spacing: .05em;
+  display: flex; align-items: center; justify-content: center;
+}
+
+h1 { margin: 0; font-size: 16px; }
+.sub { margin: 0; font-size: 12px; color: var(--muted); }
+
+.dot {
+  margin-left: auto;
+  width: 10px; height: 10px; border-radius: 50%;
+  background: #c8d2dc;
+}
+.dot.on { background: var(--teal); box-shadow: 0 0 0 4px rgba(15,155,142,.18); }
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 10px 12px;
+  margin-bottom: 10px;
+}
+
+summary { cursor: pointer; font-weight: 600; }
+
+.row { display: flex; align-items: center; gap: 8px; }
+.row.between { justify-content: space-between; }
+.row.buttons { margin-top: 10px; flex-wrap: wrap; }
+
+.label {
+  font-size: 11px; font-weight: 700; letter-spacing: .06em;
+  text-transform: uppercase; color: var(--muted);
+}
+
+.sentence {
+  margin: 8px 0 6px;
+  font-size: 18px;
+  line-height: 1.35;
+  min-height: 48px;
+}
+.sentence.building { color: var(--teal-dark); }
+
+.glosses { display: flex; flex-wrap: wrap; gap: 4px; min-height: 22px; }
+.gloss {
+  background: #e8f5f3; color: var(--teal-dark);
+  border-radius: 999px; padding: 2px 8px; font-size: 12px;
+}
+
+.meter {
+  height: 6px; border-radius: 4px; background: #eef2f6; overflow: hidden;
+  margin: 8px 0 4px;
+}
+.meter span { display: block; height: 100%; width: 0; background: var(--teal); }
+
+.hint { margin: 4px 0 0; font-size: 12px; color: var(--muted); }
+.warn {
+  margin: 6px 0 0; font-size: 12px; color: var(--warn);
+  background: #fff6ec; border: 1px solid #f3dcc4; border-radius: 8px; padding: 6px 8px;
+}
+/* A sentence that is finished, not the one being signed now. */
+.sentence.stale { color: var(--muted); }
+.error { margin: 8px 0 0; font-size: 12px; color: var(--bad); }
+
+button {
+  font: inherit;
+  border-radius: 9px;
+  padding: 8px 12px;
+  border: 1px solid var(--line);
+  background: #fff;
+  color: var(--ink);
+  cursor: pointer;
+}
+button:hover { border-color: #cdd7e1; }
+button.primary { background: var(--teal); border-color: var(--teal); color: #fff; }
+button.primary.stop { background: var(--bad); border-color: var(--bad); }
+button.small { padding: 4px 9px; font-size: 12px; }
+button:disabled { opacity: .5; cursor: default; }
+
+.switch { display: flex; align-items: center; gap: 7px; font-weight: 600; }
+.switch input { width: 16px; height: 16px; accent-color: var(--teal); }
+
+select, input[type="text"] {
+  flex: 1;
+  min-width: 0;
+  padding: 6px 8px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fff;
+  font: inherit;
+}
+input[type="range"] { flex: 0 0 90px; accent-color: var(--teal); }
+
+.field {
+  display: flex; align-items: center; gap: 8px;
+  margin-top: 8px; font-size: 13px;
+}
+.field > span { flex: 0 0 92px; color: var(--muted); }
+
+.chip {
+  font-size: 11px; color: var(--muted);
+  border: 1px solid var(--line); border-radius: 999px; padding: 1px 8px;
+}
+
+code {
+  background: #eef2f6; border-radius: 5px; padding: 1px 5px; font-size: 12px;
+}

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SignAI</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <header>
+      <div class="mark" aria-hidden="true">ISL</div>
+      <div>
+        <h1>SignAI</h1>
+        <p class="sub" id="backendLine">checking the backend…</p>
+      </div>
+      <span class="dot" id="runDot" title="not translating"></span>
+    </header>
+
+    <section class="card">
+      <div class="row between">
+        <span class="label">Translation</span>
+        <span class="chip" id="fpsChip">—</span>
+      </div>
+      <p class="sentence" id="sentence">Start translating, then sign to your camera.</p>
+      <div class="glosses" id="glosses"></div>
+      <div class="meter"><span id="confidenceBar"></span></div>
+      <p class="hint" id="confidenceText">no sign read yet</p>
+      <p class="warn" id="framing" hidden></p>
+      <p class="hint" id="cameraLine"></p>
+
+      <div class="row buttons">
+        <button id="startBtn" class="primary">Start translating</button>
+        <button id="finishBtn" class="ghost">Finish sentence</button>
+        <button id="clearBtn" class="ghost">Clear</button>
+      </div>
+      <p class="error" id="error" hidden></p>
+    </section>
+
+    <section class="card">
+      <div class="row between">
+        <label class="switch">
+          <input type="checkbox" id="autoSpeak" />
+          <span>Speak aloud</span>
+        </label>
+        <button id="speakBtn" class="ghost small">Speak again</button>
+      </div>
+      <div class="row">
+        <select id="voice" aria-label="Voice"></select>
+        <input type="range" id="rate" min="0.6" max="1.6" step="0.1"
+               aria-label="Speaking speed" />
+      </div>
+      <p class="hint">
+        The voice plays on your speakers, so everyone on the call hears it through
+        your microphone. Headphones will silence it for them.
+      </p>
+    </section>
+
+    <section class="card">
+      <div class="row between">
+        <label class="switch">
+          <input type="checkbox" id="autoPost" />
+          <span>Post into the call chat</span>
+        </label>
+        <button id="postBtn" class="ghost small">Post now</button>
+      </div>
+      <div class="row between">
+        <span class="hint" id="tabLine">No call tab chosen.</span>
+        <button id="useTabBtn" class="ghost small">Use this tab</button>
+      </div>
+      <p class="hint" id="postResult"></p>
+    </section>
+
+    <details class="card">
+      <summary>Settings</summary>
+      <label class="field">
+        <span>Backend</span>
+        <input type="text" id="backendUrl" spellcheck="false" />
+      </label>
+      <label class="field">
+        <span>Chat prefix</span>
+        <input type="text" id="prefix" spellcheck="false" />
+      </label>
+      <label class="field">
+        <span>Confidence</span>
+        <input type="range" id="minConfidence" min="0.2" max="0.8" step="0.05" />
+        <b id="minConfidenceValue">0.35</b>
+      </label>
+      <button id="saveBtn" class="ghost small">Save settings</button>
+      <p class="hint">
+        Start the backend first:<br />
+        <code>python server/app.py</code>
+      </p>
+    </details>
+
+    <script src="popup.js"></script>
+  </body>
+</html>

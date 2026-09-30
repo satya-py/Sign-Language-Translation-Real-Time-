@@ -1,0 +1,10 @@
+# Installed into the existing venv with --no-deps so nothing pinned was touched:
+#   pip install --no-deps flask werkzeug itsdangerous blinker flask-cors
+Flask==3.1.3
+Werkzeug==3.1.8
+flask-cors==6.0.5
+itsdangerous==2.2.0
+blinker==1.9.0
+
+# Already present in INCLUDE/venv and deliberately NOT pinned here, so installing
+# this file can never upgrade them: torch, torchvision, mediapipe, opencv, numpy.

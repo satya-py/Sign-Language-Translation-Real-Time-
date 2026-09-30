@@ -1,0 +1,527 @@
+{
+  "_comment": [
+    "Every sign the sentence engine understands, and how it is worded in English.",
+    "Adding a new sign to the model = adding one line here; nothing else changes.",
+    "Words marked \"taught\": false are not in the model yet - they are the ones",
+    "worth teaching next, and they already work in sentences once recorded.",
+    "kind: pronoun | person | place | thing | symptom | state | time | verb |",
+    "      question | answer | polite | negation | number"
+  ],
+  "pronoun": {
+    "i": {
+      "name": "I",
+      "be": "am",
+      "have": "have",
+      "possessive": "my",
+      "taught": true,
+      "object": "me"
+    },
+    "you": {
+      "name": "You",
+      "be": "are",
+      "have": "have",
+      "possessive": "your",
+      "taught": true,
+      "object": "you"
+    },
+    "he": {
+      "name": "He",
+      "be": "is",
+      "have": "has",
+      "possessive": "his",
+      "taught": true,
+      "object": "him"
+    },
+    "she": {
+      "name": "She",
+      "be": "is",
+      "have": "has",
+      "possessive": "her",
+      "taught": true,
+      "object": "her"
+    },
+    "we": {
+      "name": "We",
+      "be": "are",
+      "have": "have",
+      "possessive": "our",
+      "taught": false,
+      "object": "us"
+    },
+    "they": {
+      "name": "They",
+      "be": "are",
+      "have": "have",
+      "possessive": "their",
+      "taught": false,
+      "object": "them"
+    }
+  },
+  "person": {
+    "doctor": {
+      "name": "the doctor",
+      "taught": true
+    },
+    "patient": {
+      "name": "the patient",
+      "taught": true
+    },
+    "mother": {
+      "name": "my mother",
+      "taught": true
+    },
+    "father": {
+      "name": "my father",
+      "taught": true
+    },
+    "family": {
+      "name": "my family",
+      "taught": true
+    },
+    "friend": {
+      "name": "my friend",
+      "taught": true
+    },
+    "nurse": {
+      "name": "the nurse",
+      "taught": false
+    },
+    "baby": {
+      "name": "the baby",
+      "taught": false
+    }
+  },
+  "place": {
+    "hospital": {
+      "at": "at the hospital",
+      "to": "to the hospital",
+      "taught": true,
+      "noun": "the hospital"
+    },
+    "house": {
+      "at": "at home",
+      "to": "home",
+      "taught": true,
+      "noun": "home"
+    },
+    "school": {
+      "at": "at school",
+      "to": "to school",
+      "taught": true,
+      "noun": "the school"
+    },
+    "bathroom": {
+      "at": "in the bathroom",
+      "to": "to the bathroom",
+      "taught": true,
+      "noun": "the bathroom"
+    },
+    "bed": {
+      "at": "in bed",
+      "to": "to bed",
+      "taught": true,
+      "noun": "the bed"
+    },
+    "clinic": {
+      "at": "at the clinic",
+      "to": "to the clinic",
+      "taught": false,
+      "noun": "the clinic"
+    },
+    "market": {
+      "at": "at the market",
+      "to": "to the market",
+      "taught": false,
+      "noun": "the market"
+    }
+  },
+  "thing": {
+    "medicine": {
+      "name": "medicine",
+      "article": "",
+      "taught": true
+    },
+    "money": {
+      "name": "money",
+      "article": "",
+      "taught": true
+    },
+    "water": {
+      "name": "water",
+      "article": "",
+      "taught": false
+    },
+    "food": {
+      "name": "food",
+      "article": "",
+      "taught": false
+    },
+    "tablet": {
+      "name": "tablet",
+      "article": "a ",
+      "taught": false
+    },
+    "injection": {
+      "name": "injection",
+      "article": "an ",
+      "taught": false
+    },
+    "report": {
+      "name": "report",
+      "article": "the ",
+      "taught": false
+    },
+    "telephone": {
+      "name": "phone",
+      "article": "the ",
+      "taught": false
+    },
+    "help": {
+      "name": "help",
+      "article": "",
+      "taught": false
+    },
+    "time": {
+      "name": "time",
+      "article": "the ",
+      "taught": true
+    }
+  },
+  "symptom": {
+    "cough": {
+      "verb": "have",
+      "phrase": "a cough",
+      "taught": true
+    },
+    "fever": {
+      "verb": "have",
+      "phrase": "a fever",
+      "taught": true
+    },
+    "hot": {
+      "verb": "have",
+      "phrase": "a fever",
+      "taught": true
+    },
+    "headache": {
+      "verb": "have",
+      "phrase": "a headache",
+      "taught": true
+    },
+    "stomach_ache": {
+      "verb": "have",
+      "phrase": "a stomach ache",
+      "taught": true
+    },
+    "sore_throat": {
+      "verb": "have",
+      "phrase": "a sore throat",
+      "taught": true
+    },
+    "runny_nose": {
+      "verb": "have",
+      "phrase": "a runny nose",
+      "taught": true
+    },
+    "trouble_breathing": {
+      "verb": "have",
+      "phrase": "trouble breathing",
+      "taught": true
+    },
+    "nausea": {
+      "verb": "feel",
+      "phrase": "nauseous",
+      "taught": true
+    },
+    "tired": {
+      "verb": "feel",
+      "phrase": "tired",
+      "taught": true
+    },
+    "cold": {
+      "verb": "feel",
+      "phrase": "cold",
+      "taught": true
+    },
+    "pain": {
+      "verb": "have",
+      "phrase": "pain",
+      "taught": false
+    },
+    "dizzy": {
+      "verb": "feel",
+      "phrase": "dizzy",
+      "taught": false
+    },
+    "vomit": {
+      "verb": "have",
+      "phrase": "been vomiting",
+      "taught": false
+    }
+  },
+  "state": {
+    "sick": {
+      "phrase": "sick",
+      "taught": true
+    },
+    "healthy": {
+      "phrase": "healthy",
+      "taught": true
+    },
+    "good": {
+      "phrase": "better",
+      "plain": "good",
+      "taught": true
+    },
+    "bad": {
+      "phrase": "not well",
+      "plain": "bad",
+      "taught": true
+    },
+    "weak": {
+      "phrase": "weak",
+      "taught": true
+    },
+    "strong": {
+      "phrase": "strong",
+      "taught": true
+    },
+    "old": {
+      "phrase": "old",
+      "taught": true
+    },
+    "young": {
+      "phrase": "young",
+      "taught": true
+    },
+    "dead": {
+      "phrase": "dead",
+      "taught": true
+    },
+    "alive": {
+      "phrase": "alive",
+      "taught": true
+    },
+    "hungry": {
+      "phrase": "hungry",
+      "taught": false
+    },
+    "thirsty": {
+      "phrase": "thirsty",
+      "taught": false
+    }
+  },
+  "time": {
+    "today": {
+      "phrase": "today",
+      "tense": "present",
+      "taught": true
+    },
+    "tomorrow": {
+      "phrase": "tomorrow",
+      "tense": "future",
+      "taught": true
+    },
+    "yesterday": {
+      "phrase": "yesterday",
+      "tense": "past",
+      "taught": true
+    },
+    "morning": {
+      "phrase": "in the morning",
+      "tense": "present",
+      "taught": true
+    },
+    "night": {
+      "phrase": "at night",
+      "tense": "present",
+      "taught": true
+    },
+    "evening": {
+      "phrase": "in the evening",
+      "tense": "present",
+      "taught": false
+    },
+    "now": {
+      "phrase": "now",
+      "tense": "present",
+      "taught": false
+    },
+    "week": {
+      "phrase": "this week",
+      "tense": "present",
+      "taught": false
+    },
+    "month": {
+      "phrase": "this month",
+      "tense": "present",
+      "taught": false
+    },
+    "day": {
+      "phrase": "days",
+      "tense": "present",
+      "counter": true,
+      "taught": false
+    }
+  },
+  "verb": {
+    "want": {
+      "present": "want",
+      "third": "wants",
+      "past": "wanted",
+      "future": "will want",
+      "taught": false
+    },
+    "need": {
+      "present": "need",
+      "third": "needs",
+      "past": "needed",
+      "future": "will need",
+      "taught": false
+    },
+    "go": {
+      "present": "am going",
+      "third": "is going",
+      "past": "went",
+      "future": "will go",
+      "motion": true,
+      "taught": false
+    },
+    "come": {
+      "present": "am coming",
+      "third": "is coming",
+      "past": "came",
+      "future": "will come",
+      "motion": true,
+      "taught": false
+    },
+    "give": {
+      "present": "give",
+      "third": "gives",
+      "past": "gave",
+      "future": "will give",
+      "taught": false
+    },
+    "take": {
+      "present": "take",
+      "third": "takes",
+      "past": "took",
+      "future": "will take",
+      "taught": false
+    },
+    "see": {
+      "present": "see",
+      "third": "sees",
+      "past": "saw",
+      "future": "will see",
+      "taught": false
+    },
+    "eat": {
+      "present": "eat",
+      "third": "eats",
+      "past": "ate",
+      "future": "will eat",
+      "taught": false
+    },
+    "drink": {
+      "present": "drink",
+      "third": "drinks",
+      "past": "drank",
+      "future": "will drink",
+      "taught": false
+    },
+    "sleep": {
+      "present": "sleep",
+      "third": "sleeps",
+      "past": "slept",
+      "future": "will sleep",
+      "taught": false
+    },
+    "understand": {
+      "present": "understand",
+      "third": "understands",
+      "past": "understood",
+      "future": "will understand",
+      "taught": false
+    },
+    "wait": {
+      "present": "am waiting",
+      "third": "is waiting",
+      "past": "waited",
+      "future": "will wait",
+      "taught": false
+    },
+    "call": {
+      "present": "call",
+      "third": "calls",
+      "past": "called",
+      "future": "will call",
+      "taught": false
+    }
+  },
+  "question": {
+    "what": {
+      "word": "What",
+      "taught": false
+    },
+    "where": {
+      "word": "Where",
+      "taught": false
+    },
+    "when": {
+      "word": "When",
+      "taught": false
+    },
+    "who": {
+      "word": "Who",
+      "taught": false
+    },
+    "why": {
+      "word": "Why",
+      "taught": false
+    },
+    "how_many": {
+      "word": "How many",
+      "taught": false
+    },
+    "how_are_you": {
+      "word": "How are you",
+      "fixed": "How are you?",
+      "taught": true
+    }
+  },
+  "answer": {
+    "yes": {
+      "fixed": "Yes.",
+      "taught": false
+    },
+    "no": {
+      "fixed": "No.",
+      "taught": false
+    }
+  },
+  "polite": {
+    "hello": {
+      "fixed": "Hello!",
+      "taught": true
+    },
+    "thank_you": {
+      "fixed": "Thank you.",
+      "taught": true
+    },
+    "please": {
+      "fixed": "Please",
+      "inline": true,
+      "taught": false
+    },
+    "sorry": {
+      "fixed": "Sorry.",
+      "taught": false
+    }
+  },
+  "negation": {
+    "not": {
+      "taught": false
+    }
+  }
+}

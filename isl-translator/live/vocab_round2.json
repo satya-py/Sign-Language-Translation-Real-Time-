@@ -1,0 +1,423 @@
+{
+ "_comment": [
+  "Round 2 vocabulary: what a doctor's appointment needs beyond the first 164 signs.",
+  "tier 1 is what the demo cannot do without; higher tiers are worth having.",
+  "Words with an INCLUDE clip train from the dataset, the rest from your takes."
+ ],
+ "command": {
+  "sit": {
+   "verb": "sit down",
+   "tier": 1,
+   "taught": false
+  },
+  "stand": {
+   "verb": "stand up",
+   "tier": 1,
+   "taught": false
+  },
+  "lie_down": {
+   "verb": "lie down",
+   "tier": 1,
+   "taught": false
+  },
+  "breathe": {
+   "verb": "take a deep breath",
+   "tier": 1,
+   "taught": false
+  },
+  "open_mouth": {
+   "verb": "open your mouth",
+   "tier": 1,
+   "taught": false
+  },
+  "show": {
+   "verb": "show me",
+   "tier": 1,
+   "taught": false
+  },
+  "relax": {
+   "verb": "relax",
+   "tier": 3,
+   "taught": false
+  },
+  "turn": {
+   "verb": "turn around",
+   "tier": 3,
+   "taught": false
+  },
+  "push": {
+   "verb": "push",
+   "tier": 4,
+   "taught": false
+  },
+  "stop": {
+   "verb": "stop",
+   "tier": 2,
+   "taught": false
+  }
+ },
+ "condition": {
+  "diabetes": {
+   "name": "diabetes",
+   "tier": 1,
+   "taught": false
+  },
+  "blood_pressure": {
+   "name": "high blood pressure",
+   "tier": 1,
+   "taught": false
+  },
+  "allergy": {
+   "name": "an allergy",
+   "tier": 1,
+   "taught": false
+  },
+  "asthma": {
+   "name": "asthma",
+   "tier": 2,
+   "taught": false
+  },
+  "pregnant": {
+   "name": "pregnancy",
+   "state": "pregnant",
+   "tier": 1,
+   "taught": false
+  },
+  "heart_problem": {
+   "name": "a heart problem",
+   "tier": 2,
+   "taught": false
+  },
+  "tb": {
+   "name": "TB",
+   "tier": 3,
+   "taught": false
+  },
+  "covid": {
+   "name": "COVID",
+   "tier": 3,
+   "taught": false
+  }
+ },
+ "symptom": {
+  "rash": {
+   "verb": "have",
+   "phrase": "a rash",
+   "tier": 2,
+   "taught": false,
+   "locatable": true
+  },
+  "numb": {
+   "verb": "feel",
+   "phrase": "numb",
+   "tier": 2,
+   "taught": false,
+   "locatable": true
+  },
+  "cramp": {
+   "verb": "have",
+   "phrase": "cramps",
+   "tier": 2,
+   "taught": false,
+   "locatable": true
+  },
+  "sneeze": {
+   "verb": "have",
+   "phrase": "been sneezing",
+   "tier": 3,
+   "taught": false
+  },
+  "chills": {
+   "verb": "have",
+   "phrase": "chills",
+   "tier": 3,
+   "taught": false
+  },
+  "burning": {
+   "verb": "have",
+   "phrase": "a burning feeling",
+   "tier": 2,
+   "taught": false,
+   "locatable": true
+  },
+  "no_appetite": {
+   "verb": "have",
+   "phrase": "no appetite",
+   "tier": 2,
+   "taught": false
+  },
+  "weight_loss": {
+   "verb": "have",
+   "phrase": "lost weight",
+   "tier": 3,
+   "taught": false
+  },
+  "constipation": {
+   "verb": "have",
+   "phrase": "constipation",
+   "tier": 3,
+   "taught": false
+  }
+ },
+ "body": {
+  "neck": {
+   "name": "neck",
+   "ache": null,
+   "tier": 2,
+   "taught": false
+  },
+  "shoulder": {
+   "name": "shoulder",
+   "ache": null,
+   "tier": 2,
+   "taught": false
+  },
+  "knee": {
+   "name": "knee",
+   "ache": null,
+   "tier": 2,
+   "taught": false
+  },
+  "elbow": {
+   "name": "elbow",
+   "ache": null,
+   "tier": 3,
+   "taught": false
+  },
+  "finger": {
+   "name": "finger",
+   "ache": null,
+   "tier": 3,
+   "taught": false
+  },
+  "waist": {
+   "name": "waist",
+   "ache": null,
+   "tier": 3,
+   "taught": false
+  },
+  "bone": {
+   "name": "bone",
+   "ache": null,
+   "tier": 3,
+   "taught": false
+  },
+  "joint": {
+   "name": "joints",
+   "ache": null,
+   "tier": 3,
+   "taught": false
+  },
+  "lungs": {
+   "name": "lungs",
+   "ache": null,
+   "tier": 3,
+   "taught": false
+  },
+  "kidney": {
+   "name": "kidney",
+   "ache": null,
+   "tier": 4,
+   "taught": false
+  },
+  "liver": {
+   "name": "liver",
+   "ache": null,
+   "tier": 4,
+   "taught": false
+  },
+  "urine": {
+   "name": "urine",
+   "ache": null,
+   "tier": 2,
+   "taught": false
+  }
+ },
+ "place": {
+  "reception": {
+   "at": "at the reception",
+   "to": "to the reception",
+   "noun": "the reception",
+   "tier": 2,
+   "taught": false
+  },
+  "ward": {
+   "at": "in the ward",
+   "to": "to the ward",
+   "noun": "the ward",
+   "tier": 3,
+   "taught": false
+  },
+  "pharmacy": {
+   "at": "at the pharmacy",
+   "to": "to the pharmacy",
+   "noun": "the pharmacy",
+   "tier": 2,
+   "taught": false
+  },
+  "laboratory": {
+   "at": "at the laboratory",
+   "to": "to the laboratory",
+   "noun": "the laboratory",
+   "tier": 2,
+   "taught": false
+  }
+ },
+ "thing": {
+  "appointment": {
+   "name": "appointment",
+   "article": "an ",
+   "tier": 1,
+   "taught": false
+  },
+  "form": {
+   "name": "form",
+   "article": "the ",
+   "tier": 3,
+   "taught": false
+  },
+  "insurance": {
+   "name": "insurance",
+   "article": "",
+   "tier": 3,
+   "taught": false
+  },
+  "interpreter": {
+   "name": "an interpreter",
+   "article": "",
+   "tier": 1,
+   "taught": false
+  },
+  "sign_language": {
+   "name": "sign language",
+   "article": "",
+   "tier": 1,
+   "taught": false
+  }
+ },
+ "verb": {
+  "write": {
+   "present": "write",
+   "third": "writes",
+   "past": "wrote",
+   "future": "will write",
+   "tier": 1,
+   "taught": false
+  },
+  "read": {
+   "present": "read",
+   "third": "reads",
+   "past": "read",
+   "future": "will read",
+   "tier": 2,
+   "taught": false
+  },
+  "repeat": {
+   "present": "repeat",
+   "third": "repeats",
+   "past": "repeated",
+   "future": "will repeat",
+   "tier": 1,
+   "taught": false
+  },
+  "fall": {
+   "present": "fell",
+   "third": "fell",
+   "past": "fell",
+   "future": "will fall",
+   "tier": 2,
+   "taught": false
+  },
+  "hurt": {
+   "present": "hurt myself",
+   "third": "hurt himself",
+   "past": "hurt myself",
+   "future": "will hurt",
+   "tier": 2,
+   "taught": false
+  },
+  "pay": {
+   "present": "pay",
+   "third": "pays",
+   "past": "paid",
+   "future": "will pay",
+   "tier": 3,
+   "taught": false
+  },
+  "use": {
+   "present": "use",
+   "third": "uses",
+   "past": "used",
+   "future": "will use",
+   "tier": 2,
+   "taught": false
+  }
+ },
+ "polite": {
+  "goodbye": {
+   "fixed": "Goodbye.",
+   "tier": 2,
+   "taught": false
+  },
+  "excuse_me": {
+   "fixed": "Excuse me.",
+   "tier": 2,
+   "taught": false
+  },
+  "ok": {
+   "fixed": "Okay.",
+   "tier": 1,
+   "taught": false
+  }
+ },
+ "state": {
+  "afraid": {
+   "phrase": "afraid",
+   "tier": 2,
+   "taught": false
+  },
+  "comfortable": {
+   "phrase": "comfortable",
+   "tier": 3,
+   "taught": false
+  },
+  "angry": {
+   "phrase": "angry",
+   "tier": 4,
+   "taught": false
+  },
+  "deaf": {
+   "phrase": "deaf",
+   "tier": 1,
+   "taught": false
+  },
+  "mute": {
+   "phrase": "unable to speak",
+   "tier": 1,
+   "taught": false
+  },
+  "blind": {
+   "phrase": "blind",
+   "tier": 3,
+   "taught": false
+  }
+ },
+ "info": {
+  "name": {
+   "phrase": "My name is",
+   "tier": 1,
+   "taught": false
+  },
+  "age": {
+   "phrase": "I am",
+   "unit": "years old",
+   "tier": 2,
+   "taught": false
+  },
+  "address": {
+   "phrase": "My address is",
+   "tier": 3,
+   "taught": false
+  }
+ }
+}

@@ -1,0 +1,304 @@
+{
+ "model": "models/signs.pt",
+ "threshold": 0.35,
+ "clips": 1185,
+ "correct": 1131,
+ "missed": 16,
+ "wrong": 38,
+ "confusion": {
+  "afternoon": {
+   "afternoon": 10
+  },
+  "alive": {
+   "alive": 13
+  },
+  "alright": {
+   "alright": 8,
+   "(nothing)": 2
+  },
+  "baby": {
+   "baby": 3
+  },
+  "bad": {
+   "bad": 25,
+   "good": 1
+  },
+  "bathroom": {
+   "bathroom": 19
+  },
+  "bed": {
+   "bed": 19
+  },
+  "big_large": {
+   "big_large": 10
+  },
+  "blind": {
+   "blind": 8
+  },
+  "boy": {
+   "man": 4,
+   "boy": 6
+  },
+  "cold": {
+   "cold": 25
+  },
+  "dead": {
+   "dead": 13
+  },
+  "deaf": {
+   "deaf": 8
+  },
+  "doctor": {
+   "doctor": 19
+  },
+  "evening": {
+   "evening": 3
+  },
+  "family": {
+   "family": 22
+  },
+  "fast": {
+   "fast": 10
+  },
+  "father": {
+   "father": 24,
+   "woman": 1
+  },
+  "friday": {
+   "friday": 10
+  },
+  "friend": {
+   "(nothing)": 2,
+   "friend": 23
+  },
+  "girl": {
+   "girl": 8,
+   "boy": 1,
+   "woman": 1
+  },
+  "good": {
+   "good": 26
+  },
+  "good_morning": {
+   "good_morning": 10
+  },
+  "good_night": {
+   "good_night": 10
+  },
+  "grandfather": {
+   "grandfather": 9,
+   "father": 1
+  },
+  "grandmother": {
+   "grandmother": 7,
+   "woman": 2,
+   "mother": 1
+  },
+  "he": {
+   "he": 24,
+   "man": 1,
+   "(nothing)": 2
+  },
+  "healthy": {
+   "healthy": 26
+  },
+  "hello": {
+   "hello": 26
+  },
+  "hospital": {
+   "hospital": 22,
+   "i": 1,
+   "alive": 2
+  },
+  "hot": {
+   "hot": 26
+  },
+  "house": {
+   "house": 25
+  },
+  "how_are_you": {
+   "how_are_you": 26
+  },
+  "i": {
+   "i": 25,
+   "you": 1
+  },
+  "man": {
+   "man": 10
+  },
+  "market": {
+   "market": 3
+  },
+  "medicine": {
+   "medicine": 19
+  },
+  "minute": {
+   "minute": 8,
+   "money": 2
+  },
+  "monday": {
+   "monday": 10
+  },
+  "money": {
+   "money": 19
+  },
+  "month": {
+   "school": 1,
+   "month": 2
+  },
+  "morning": {
+   "morning": 19
+  },
+  "mother": {
+   "mother": 25
+  },
+  "night": {
+   "night": 19,
+   "morning": 1
+  },
+  "old": {
+   "old": 25,
+   "(nothing)": 1
+  },
+  "patient": {
+   "patient": 19
+  },
+  "saturday": {
+   "saturday": 10
+  },
+  "school": {
+   "school": 25
+  },
+  "she": {
+   "woman": 3,
+   "she": 20,
+   "(nothing)": 1,
+   "he": 2
+  },
+  "sick": {
+   "sick": 25,
+   "(nothing)": 1
+  },
+  "slow": {
+   "slow": 9,
+   "doctor": 1
+  },
+  "small_little": {
+   "small_little": 10
+  },
+  "strong": {
+   "strong": 14
+  },
+  "sunday": {
+   "sunday": 10
+  },
+  "telephone": {
+   "yesterday": 2,
+   "money": 1
+  },
+  "thank_you": {
+   "thank_you": 26
+  },
+  "they": {
+   "they": 3
+  },
+  "thursday": {
+   "thursday": 10
+  },
+  "time": {
+   "time": 15
+  },
+  "today": {
+   "today": 20
+  },
+  "tomorrow": {
+   "tomorrow": 18,
+   "(nothing)": 1
+  },
+  "tuesday": {
+   "tuesday": 10
+  },
+  "we": {
+   "we": 3
+  },
+  "weak": {
+   "weak": 13
+  },
+  "wednesday": {
+   "wednesday": 10
+  },
+  "week": {
+   "month": 1,
+   "week": 1,
+   "(nothing)": 1
+  },
+  "woman": {
+   "woman": 10
+  },
+  "yesterday": {
+   "yesterday": 17,
+   "money": 1,
+   "(nothing)": 1
+  },
+  "you": {
+   "you": 21,
+   "i": 5
+  },
+  "young": {
+   "young": 26
+  },
+  "call": {
+   "call": 5
+  },
+  "come": {
+   "come": 4,
+   "sick": 1
+  },
+  "cough": {
+   "cough": 5
+  },
+  "drink": {
+   "drink": 5
+  },
+  "eat": {
+   "eat": 4,
+   "(nothing)": 1
+  },
+  "fever": {
+   "fever": 4,
+   "(nothing)": 1
+  },
+  "finish": {
+   "(nothing)": 1,
+   "finish": 4
+  },
+  "give": {
+   "give": 5
+  },
+  "headache": {
+   "headache": 4,
+   "(nothing)": 1
+  },
+  "nausea": {
+   "nausea": 6
+  },
+  "no": {
+   "no": 5
+  },
+  "runny_nose": {
+   "runny_nose": 6
+  },
+  "sore_throat": {
+   "sore_throat": 6
+  },
+  "stomach_ache": {
+   "stomach_ache": 5
+  },
+  "tired": {
+   "tired": 5
+  },
+  "trouble_breathing": {
+   "trouble_breathing": 6
+  }
+ }
+}

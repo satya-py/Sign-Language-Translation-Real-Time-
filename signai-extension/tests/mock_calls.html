@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>SignAI injection test bench</title>
+    <style>
+      body { font: 14px/1.5 system-ui, sans-serif; margin: 20px; color: #0d1b2a; }
+      section { border: 1px solid #dde4ea; border-radius: 10px; padding: 12px; margin: 12px 0; }
+      h2 { font-size: 15px; margin: 0 0 8px; }
+      .composer { min-height: 34px; border: 1px solid #ccd; border-radius: 6px; padding: 6px; }
+      textarea { width: 100%; min-height: 34px; }
+      .sent { color: #0b7d73; font-weight: 600; white-space: pre-wrap; }
+      .decoy { background: #fff4e5; }
+    </style>
+  </head>
+  <body>
+    <h1>Injection test bench</h1>
+    <p>
+      Each section imitates how one calling app builds its chat box, including the
+      parts that break naive insertion: a React-controlled textarea that ignores a
+      plain value assignment, a rich-text div that only listens to input events, a
+      composer inside a shadow root, and a panel that has to be opened first.
+    </p>
+
+    <!-- Google Meet: plain textarea with a named input and a send button -->
+    <section id="meet">
+      <h2>Google Meet</h2>
+      <textarea name="chatTextInput" aria-label="Send a message to everyone"></textarea>
+      <button aria-label="Send a message">Send</button>
+      <div class="sent" data-out="meet"></div>
+    </section>
+
+    <!-- Zoom: class-named textarea, sends on Enter, no button -->
+    <section id="zoom">
+      <h2>Zoom (Enter to send)</h2>
+      <textarea class="chat-box__chat-textarea" placeholder="Type message here..."></textarea>
+      <div class="sent" data-out="zoom"></div>
+    </section>
+
+    <!-- Teams: contenteditable that only accepts input events -->
+    <section id="teams">
+      <h2>Microsoft Teams</h2>
+      <div data-tid="ckeditor-editor" contenteditable="true" role="textbox"
+           class="composer" aria-label="Type a new message"></div>
+      <button data-tid="newMessageCommands-send" aria-label="Send">Send</button>
+      <div class="sent" data-out="teams"></div>
+    </section>
+
+    <!-- Discord: Slate editor, Enter to send -->
+    <section id="discord">
+      <h2>Discord</h2>
+      <div role="textbox" contenteditable="true" data-slate-editor="true"
+           class="slateTextArea composer" aria-label="Message #general"></div>
+      <div class="sent" data-out="discord"></div>
+    </section>
+
+    <!-- React-controlled input: the classic case a plain .value assignment loses -->
+    <section id="react">
+      <h2>React-controlled composer</h2>
+      <textarea id="reactInput" aria-label="Message the conversation"></textarea>
+      <button type="submit">Send</button>
+      <div class="sent" data-out="react"></div>
+    </section>
+
+    <!-- A closed chat panel: the composer does not exist until the button is clicked -->
+    <section id="closed">
+      <h2>Call with the chat panel closed</h2>
+      <button id="openChat" aria-label="Chat with everyone" aria-pressed="false">Chat</button>
+      <div id="panel"></div>
+      <div class="sent" data-out="closed"></div>
+    </section>
+
+    <!-- A decoy: a search box must never be mistaken for a chat box -->
+    <section id="decoy" class="decoy">
+      <h2>Decoy</h2>
+      <input type="text" aria-label="Search the web" placeholder="Search" />
+    </section>
+
+    <!-- The extension's real injection code, loaded unchanged. -->
+    <script src="../extension/content.js"></script>
+    <script>
+      /** Show one mock at a time: the finder searches the whole document. */
+      window.__only = (id) => {
+        for (const section of document.querySelectorAll('section')) {
+          section.style.display = (section.id === id || section.id === 'decoy') ? '' : 'none';
+        }
+        document.activeElement?.blur?.();
+      };
+      window.__out = (id) => document.querySelector(`[data-out="${id}"]`)?.textContent || '';
+
+      // --- Meet: a send button that publishes what the textarea holds
+      const meet = document.querySelector('#meet textarea');
+      document.querySelector('#meet button').addEventListener('click', () => {
+        document.querySelector('[data-out="meet"]').textContent = meet.value;
+        meet.value = '';
+      });
+
+      // --- Zoom: Enter sends
+      const zoom = document.querySelector('#zoom textarea');
+      zoom.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') {
+          document.querySelector('[data-out="zoom"]').textContent = zoom.value;
+          zoom.value = '';
+        }
+      });
+
+      // --- Teams: only trusts the input event, like a real rich text editor
+      const teams = document.querySelector('#teams [data-tid="ckeditor-editor"]');
+      let teamsModel = '';
+      teams.addEventListener('input', () => { teamsModel = teams.textContent; });
+      document.querySelector('#teams button').addEventListener('click', () => {
+        document.querySelector('[data-out="teams"]').textContent = teamsModel;
+        teams.textContent = '';
+        teamsModel = '';
+      });
+
+      // --- Discord: Slate-like, Enter sends what the input event reported
+      const discord = document.querySelector('#discord [data-slate-editor]');
+      let discordModel = '';
+      discord.addEventListener('input', () => { discordModel = discord.textContent; });
+      discord.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') {
+          document.querySelector('[data-out="discord"]').textContent = discordModel;
+          discord.textContent = '';
+          discordModel = '';
+        }
+      });
+
+      // --- React-controlled: the component owns the value and rewrites it on
+      // every input event, exactly as React does. A plain assignment is lost.
+      const reactInput = document.getElementById('reactInput');
+      let reactModel = '';
+      const nativeValue = Object.getOwnPropertyDescriptor(
+        HTMLTextAreaElement.prototype, 'value');
+      Object.defineProperty(reactInput, 'value', {
+        get() { return nativeValue.get.call(this); },
+        set(v) {
+          // The plain path a naive script takes: the component never hears it,
+          // so the model stays empty and the text disappears on the next render.
+          nativeValue.set.call(this, v);
+        },
+      });
+      reactInput.addEventListener('input', () => { reactModel = reactInput.value; });
+      document.querySelector('#react button').addEventListener('click', () => {
+        document.querySelector('[data-out="react"]').textContent = reactModel;
+        nativeValue.set.call(reactInput, '');
+        reactModel = '';
+      });
+
+      // --- Closed panel: the composer appears only after the chat button
+      document.getElementById('openChat').addEventListener('click', (e) => {
+        e.currentTarget.setAttribute('aria-pressed', 'true');
+        setTimeout(() => {
+          document.getElementById('panel').innerHTML =
+            '<textarea aria-label="Send a message to everyone"></textarea>'
+            + '<button aria-label="Send message">Send</button>';
+          const box = document.querySelector('#panel textarea');
+          document.querySelector('#panel button').addEventListener('click', () => {
+            document.querySelector('[data-out="closed"]').textContent = box.value;
+            box.value = '';
+          });
+        }, 120);
+      });
+    </script>
+  </body>
+</html>

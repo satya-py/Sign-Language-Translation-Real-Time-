@@ -1,0 +1,75 @@
+/* Mobile-app feel from the second mockup set: status pill, dark launch card,
+   badges, and a bottom navigation bar on small screens. Tokens unchanged. */
+
+.status-pill {
+  display: inline-flex; align-items: center; gap: 7px; background: #ccfbf1; color: #0f766e;
+  border-radius: var(--r-full); padding: 7px 14px; font-family: var(--font-display);
+  font-weight: 700; font-size: 13px;
+}
+.status-pill::before {
+  content: ""; width: 8px; height: 8px; border-radius: var(--r-full); background: #0d9488;
+}
+.status-pill.busy { background: #fef3c7; color: #92400e; }
+.status-pill.busy::before { background: #d97706; }
+.status-pill.off { background: #ffe4e6; color: #9f1239; }
+.status-pill.off::before { background: #e11d48; }
+
+.badge {
+  display: inline-flex; align-items: center; gap: 6px; border-radius: var(--r-full);
+  padding: 4px 10px; font-family: var(--font-display); font-size: 11px; font-weight: 700;
+  letter-spacing: .04em; text-transform: uppercase; background: var(--surface-alt);
+  color: #334155;
+}
+.badge.teal { background: #ccfbf1; color: #0f766e; }
+.badge.blue { background: #dbeafe; color: var(--primary); }
+.badge.amber { background: #fef3c7; color: #92400e; }
+.badge.rose { background: #ffe4e6; color: #9f1239; }
+.badge.dark { background: rgba(255, 255, 255, .14); color: #d1fae5; }
+
+/* the dark "launch" card from the mobile dashboard */
+.launch {
+  background: linear-gradient(150deg, #0f1836 0%, #123a35 100%);
+  color: #eef1ff; border: 1px solid #1f2a52; border-radius: var(--r-lg);
+  padding: var(--space-lg); box-shadow: var(--level-2);
+}
+.launch h3 {
+  font-family: var(--font-display); font-size: 22px; margin: 14px 0 6px; color: #fff;
+}
+.launch p { color: #b9c3e6; margin: 0 0 16px; font-size: 15px; line-height: 22px; }
+.launch .top { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.launch .glyph {
+  width: 46px; height: 46px; border-radius: var(--r-md); background: #14b8a6; color: #04241f;
+  display: grid; place-items: center; font-size: 22px;
+}
+.launch button { background: #0d9488; color: #fff; width: 100%; }
+.launch button:hover { background: #0f766e; }
+
+.model-strip {
+  display: flex; align-items: center; gap: 12px; flex-wrap: wrap;
+  background: #eef2ff; border: 1px solid #c7d2fe; border-radius: var(--r-lg);
+  padding: 14px 16px;
+}
+.model-strip .dot {
+  width: 10px; height: 10px; border-radius: var(--r-full); background: #0d9488; flex: none;
+}
+
+/* ------------------------------------------------- bottom navigation (mobile) */
+.bottom-nav { display: none; }
+@media (max-width: 900px) {
+  .bottom-nav {
+    display: grid; grid-template-columns: repeat(5, 1fr); gap: 4px;
+    position: fixed; left: 0; right: 0; bottom: 0; z-index: 40;
+    background: rgba(255, 255, 255, .96); backdrop-filter: blur(12px);
+    border-top: 1px solid var(--line); padding: 8px 8px calc(8px + env(safe-area-inset-bottom));
+  }
+  .bottom-nav a {
+    display: grid; justify-items: center; gap: 4px; padding: 8px 4px; min-height: 56px;
+    border-radius: var(--r-md); text-decoration: none; color: var(--ink-soft);
+    font-family: var(--font-display); font-size: 11px; font-weight: 600;
+  }
+  .bottom-nav a .ic { font-size: 18px; line-height: 1; }
+  .bottom-nav a.active { background: #dbeafe; color: var(--primary); }
+  .shell-main { padding-bottom: 86px; }         /* room for the bar */
+  .sidebar { display: none; }                   /* the bar replaces it */
+  .shell { grid-template-columns: 1fr; }
+}

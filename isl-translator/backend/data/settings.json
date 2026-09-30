@@ -1,0 +1,11 @@
+{
+ "threshold": 0.35,
+ "pause": 2.0,
+ "use_llm": true,
+ "speech": true,
+ "language": "en-IN",
+ "large_text": false,
+ "high_contrast": false,
+ "reduced_motion": false,
+ "spell_engine": "letters"
+}

@@ -1,0 +1,736 @@
+{
+  "_comment": [
+    "Signs added to complete a real doctor-patient conversation.",
+    "Merged on top of vocab.json by sentence.py. Every entry carries a teaching",
+    "tier: 1 first, 5 last. Nothing here is in the model yet - record it in",
+    "/app/teach and it starts working in sentences immediately."
+  ],
+  "answer": {
+    "yes": {
+      "fixed": "Yes.",
+      "tier": 1,
+      "taught": false
+    },
+    "no": {
+      "fixed": "No.",
+      "tier": 1,
+      "taught": false
+    },
+    "maybe": {
+      "fixed": "Maybe.",
+      "tier": 5,
+      "taught": false
+    }
+  },
+  "negation": {
+    "not": {
+      "tier": 1,
+      "taught": false
+    }
+  },
+  "modal": {
+    "can": {
+      "positive": "can",
+      "negative": "cannot",
+      "tier": 1,
+      "taught": false
+    },
+    "cannot": {
+      "positive": "cannot",
+      "negative": "cannot",
+      "negated": true,
+      "tier": 1,
+      "taught": false
+    }
+  },
+  "verb": {
+    "want": {
+      "present": "want",
+      "third": "wants",
+      "past": "wanted",
+      "future": "will want",
+      "tier": 1,
+      "taught": false
+    },
+    "need": {
+      "present": "need",
+      "third": "needs",
+      "past": "needed",
+      "future": "will need",
+      "tier": 1,
+      "taught": false
+    },
+    "go": {
+      "present": "am going",
+      "third": "is going",
+      "past": "went",
+      "future": "will go",
+      "motion": true,
+      "tier": 1,
+      "taught": false
+    },
+    "come": {
+      "present": "am coming",
+      "third": "is coming",
+      "past": "came",
+      "future": "will come",
+      "motion": true,
+      "tier": 1,
+      "taught": false
+    },
+    "give": {
+      "present": "give",
+      "third": "gives",
+      "past": "gave",
+      "future": "will give",
+      "tier": 1,
+      "taught": false
+    },
+    "take": {
+      "present": "take",
+      "third": "takes",
+      "past": "took",
+      "future": "will take",
+      "tier": 1,
+      "taught": false
+    },
+    "understand": {
+      "present": "understand",
+      "third": "understands",
+      "past": "understood",
+      "future": "will understand",
+      "tier": 1,
+      "taught": false
+    },
+    "know": {
+      "present": "know",
+      "third": "knows",
+      "past": "knew",
+      "future": "will know",
+      "tier": 2,
+      "taught": false
+    },
+    "see": {
+      "present": "see",
+      "third": "sees",
+      "past": "saw",
+      "future": "will see",
+      "tier": 2,
+      "taught": false
+    },
+    "eat": {
+      "present": "eat",
+      "third": "eats",
+      "past": "ate",
+      "future": "will eat",
+      "tier": 4,
+      "taught": false
+    },
+    "drink": {
+      "present": "drink",
+      "third": "drinks",
+      "past": "drank",
+      "future": "will drink",
+      "tier": 4,
+      "taught": false
+    },
+    "sleep": {
+      "present": "sleep",
+      "third": "sleeps",
+      "past": "slept",
+      "future": "will sleep",
+      "tier": 4,
+      "taught": false
+    },
+    "walk": {
+      "present": "walk",
+      "third": "walks",
+      "past": "walked",
+      "future": "will walk",
+      "tier": 5,
+      "taught": false
+    },
+    "work": {
+      "present": "work",
+      "third": "works",
+      "past": "worked",
+      "future": "will work",
+      "tier": 5,
+      "taught": false
+    },
+    "wait": {
+      "present": "am waiting",
+      "third": "is waiting",
+      "past": "waited",
+      "future": "will wait",
+      "tier": 3,
+      "taught": false
+    },
+    "call": {
+      "present": "call",
+      "third": "calls",
+      "past": "called",
+      "future": "will call",
+      "tier": 3,
+      "taught": false
+    },
+    "finish": {
+      "present": "have finished",
+      "third": "has finished",
+      "past": "finished",
+      "future": "will finish",
+      "tier": 2,
+      "taught": false
+    }
+  },
+  "question": {
+    "what": {
+      "word": "What",
+      "tier": 2,
+      "taught": false
+    },
+    "where": {
+      "word": "Where",
+      "tier": 2,
+      "taught": false
+    },
+    "when": {
+      "word": "When",
+      "tier": 2,
+      "taught": false
+    },
+    "who": {
+      "word": "Who",
+      "tier": 2,
+      "taught": false
+    },
+    "why": {
+      "word": "Why",
+      "tier": 2,
+      "taught": false
+    },
+    "how": {
+      "word": "How",
+      "tier": 2,
+      "taught": false
+    },
+    "how_many": {
+      "word": "How many",
+      "tier": 2,
+      "taught": false
+    },
+    "how_much": {
+      "word": "How much",
+      "tier": 2,
+      "taught": false
+    }
+  },
+  "body": {
+    "head": {
+      "name": "head",
+      "ache": "a headache",
+      "tier": 3,
+      "taught": false
+    },
+    "eye": {
+      "name": "eyes",
+      "plural": true,
+      "tier": 3,
+      "taught": false
+    },
+    "ear": {
+      "name": "ear",
+      "ache": "an earache",
+      "tier": 3,
+      "taught": false
+    },
+    "nose": {
+      "name": "nose",
+      "tier": 3,
+      "taught": false
+    },
+    "mouth": {
+      "name": "mouth",
+      "tier": 4,
+      "taught": false
+    },
+    "tooth": {
+      "name": "tooth",
+      "ache": "toothache",
+      "tier": 3,
+      "taught": false
+    },
+    "throat": {
+      "name": "throat",
+      "tier": 3,
+      "taught": false
+    },
+    "chest": {
+      "name": "chest",
+      "tier": 3,
+      "taught": false
+    },
+    "stomach": {
+      "name": "stomach",
+      "ache": "a stomach ache",
+      "tier": 3,
+      "taught": false
+    },
+    "back": {
+      "name": "back",
+      "ache": "back pain",
+      "tier": 3,
+      "taught": false
+    },
+    "hand": {
+      "name": "hand",
+      "tier": 3,
+      "taught": false
+    },
+    "arm": {
+      "name": "arm",
+      "tier": 4,
+      "taught": false
+    },
+    "leg": {
+      "name": "leg",
+      "tier": 3,
+      "taught": false
+    },
+    "foot": {
+      "name": "foot",
+      "tier": 4,
+      "taught": false
+    },
+    "skin": {
+      "name": "skin",
+      "tier": 4,
+      "taught": false
+    },
+    "heart": {
+      "name": "heart",
+      "tier": 4,
+      "taught": false
+    },
+    "blood": {
+      "name": "blood",
+      "tier": 4,
+      "taught": false
+    }
+  },
+  "symptom": {
+    "pain": {
+      "verb": "have",
+      "phrase": "pain",
+      "locatable": true,
+      "tier": 1,
+      "taught": false
+    },
+    "swelling": {
+      "verb": "have",
+      "phrase": "swelling",
+      "locatable": true,
+      "tier": 4,
+      "taught": false
+    },
+    "itching": {
+      "verb": "have",
+      "phrase": "itching",
+      "locatable": true,
+      "tier": 5,
+      "taught": false
+    },
+    "bleeding": {
+      "verb": "have",
+      "phrase": "bleeding",
+      "locatable": true,
+      "tier": 4,
+      "taught": false
+    },
+    "vomit": {
+      "verb": "have",
+      "phrase": "been vomiting",
+      "tier": 3,
+      "taught": false
+    },
+    "diarrhoea": {
+      "verb": "have",
+      "phrase": "diarrhoea",
+      "tier": 4,
+      "taught": false
+    },
+    "dizzy": {
+      "verb": "feel",
+      "phrase": "dizzy",
+      "tier": 3,
+      "taught": false
+    },
+    "faint": {
+      "verb": "feel",
+      "phrase": "faint",
+      "tier": 5,
+      "taught": false
+    },
+    "itchy": {
+      "verb": "feel",
+      "phrase": "itchy",
+      "tier": 5,
+      "taught": false
+    }
+  },
+  "thing": {
+    "water": {
+      "name": "water",
+      "article": "",
+      "tier": 3,
+      "taught": false
+    },
+    "food": {
+      "name": "food",
+      "article": "",
+      "tier": 3,
+      "taught": false
+    },
+    "milk": {
+      "name": "milk",
+      "article": "",
+      "tier": 5,
+      "taught": false
+    },
+    "tea": {
+      "name": "tea",
+      "article": "",
+      "tier": 5,
+      "taught": false
+    },
+    "tablet": {
+      "name": "tablet",
+      "article": "a ",
+      "tier": 3,
+      "taught": false
+    },
+    "injection": {
+      "name": "injection",
+      "article": "an ",
+      "tier": 3,
+      "taught": false
+    },
+    "syrup": {
+      "name": "syrup",
+      "article": "",
+      "tier": 5,
+      "taught": false
+    },
+    "test": {
+      "name": "test",
+      "article": "a ",
+      "tier": 4,
+      "taught": false
+    },
+    "x_ray": {
+      "name": "X-ray",
+      "article": "an ",
+      "tier": 4,
+      "taught": false
+    },
+    "report": {
+      "name": "report",
+      "article": "the ",
+      "tier": 4,
+      "taught": false
+    },
+    "prescription": {
+      "name": "prescription",
+      "article": "a ",
+      "tier": 5,
+      "taught": false
+    },
+    "operation": {
+      "name": "operation",
+      "article": "an ",
+      "tier": 4,
+      "taught": false
+    },
+    "ambulance": {
+      "name": "ambulance",
+      "article": "an ",
+      "tier": 4,
+      "taught": false
+    },
+    "help": {
+      "name": "help",
+      "article": "",
+      "tier": 1,
+      "taught": false
+    }
+  },
+  "person": {
+    "nurse": {
+      "name": "the nurse",
+      "tier": 3,
+      "taught": false
+    },
+    "baby": {
+      "name": "the baby",
+      "tier": 4,
+      "taught": false
+    },
+    "child": {
+      "name": "my child",
+      "tier": 4,
+      "taught": false
+    },
+    "wife": {
+      "name": "my wife",
+      "tier": 4,
+      "taught": false
+    },
+    "husband": {
+      "name": "my husband",
+      "tier": 4,
+      "taught": false
+    },
+    "son": {
+      "name": "my son",
+      "tier": 5,
+      "taught": false
+    },
+    "daughter": {
+      "name": "my daughter",
+      "tier": 5,
+      "taught": false
+    },
+    "brother": {
+      "name": "my brother",
+      "tier": 5,
+      "taught": false
+    },
+    "sister": {
+      "name": "my sister",
+      "tier": 5,
+      "taught": false
+    }
+  },
+  "place": {
+    "clinic": {
+      "at": "at the clinic",
+      "to": "to the clinic",
+      "noun": "the clinic",
+      "tier": 4,
+      "taught": false
+    },
+    "market": {
+      "at": "at the market",
+      "to": "to the market",
+      "noun": "the market",
+      "tier": 5,
+      "taught": false
+    },
+    "emergency": {
+      "at": "in the emergency room",
+      "to": "to the emergency room",
+      "noun": "the emergency room",
+      "tier": 4,
+      "taught": false
+    }
+  },
+  "state": {
+    "hungry": {
+      "phrase": "hungry",
+      "tier": 4,
+      "taught": false
+    },
+    "thirsty": {
+      "phrase": "thirsty",
+      "tier": 4,
+      "taught": false
+    },
+    "happy": {
+      "phrase": "happy",
+      "tier": 5,
+      "taught": false
+    },
+    "sad": {
+      "phrase": "sad",
+      "tier": 5,
+      "taught": false
+    },
+    "afraid": {
+      "phrase": "afraid",
+      "tier": 5,
+      "taught": false
+    },
+    "worried": {
+      "phrase": "worried",
+      "tier": 5,
+      "taught": false
+    },
+    "better": {
+      "phrase": "better",
+      "tier": 2,
+      "taught": false
+    },
+    "worse": {
+      "phrase": "worse",
+      "tier": 2,
+      "taught": false
+    }
+  },
+  "severity": {
+    "very": {
+      "word": "very",
+      "tier": 2,
+      "taught": false
+    },
+    "little": {
+      "word": "a little",
+      "tier": 3,
+      "taught": false
+    },
+    "more": {
+      "word": "more",
+      "tier": 3,
+      "taught": false
+    },
+    "less": {
+      "word": "less",
+      "tier": 5,
+      "taught": false
+    }
+  },
+  "duration": {
+    "day": {
+      "one": "day",
+      "many": "days",
+      "tier": 2,
+      "taught": false
+    },
+    "week": {
+      "one": "week",
+      "many": "weeks",
+      "tier": 3,
+      "taught": false
+    },
+    "month": {
+      "one": "month",
+      "many": "months",
+      "tier": 4,
+      "taught": false
+    },
+    "year": {
+      "one": "year",
+      "many": "years",
+      "tier": 5,
+      "taught": false
+    },
+    "hour": {
+      "one": "hour",
+      "many": "hours",
+      "tier": 4,
+      "taught": false
+    }
+  },
+  "time": {
+    "now": {
+      "phrase": "now",
+      "tense": "present",
+      "tier": 2,
+      "taught": false
+    },
+    "evening": {
+      "phrase": "in the evening",
+      "tense": "present",
+      "tier": 3,
+      "taught": false
+    },
+    "again": {
+      "phrase": "again",
+      "tense": "present",
+      "tier": 3,
+      "taught": false
+    },
+    "always": {
+      "phrase": "all the time",
+      "tense": "present",
+      "tier": 4,
+      "taught": false
+    },
+    "sometimes": {
+      "phrase": "sometimes",
+      "tense": "present",
+      "tier": 4,
+      "taught": false
+    },
+    "never": {
+      "phrase": "never",
+      "tense": "present",
+      "tier": 5,
+      "taught": false
+    },
+    "before": {
+      "phrase": "before",
+      "tense": "past",
+      "tier": 5,
+      "taught": false
+    },
+    "after": {
+      "phrase": "afterwards",
+      "tense": "future",
+      "tier": 5,
+      "taught": false
+    }
+  },
+  "polite": {
+    "please": {
+      "fixed": "Please",
+      "inline": true,
+      "tier": 1,
+      "taught": false
+    },
+    "sorry": {
+      "fixed": "Sorry.",
+      "tier": 2,
+      "taught": false
+    }
+  },
+  "pronoun": {
+    "we": {
+      "name": "We",
+      "be": "are",
+      "have": "have",
+      "possessive": "our",
+      "tier": 2,
+      "taught": false
+    },
+    "they": {
+      "name": "They",
+      "be": "are",
+      "have": "have",
+      "possessive": "their",
+      "tier": 3,
+      "taught": false
+    }
+  },
+  "possessive": {
+    "my": {
+      "pronoun": "i",
+      "tier": 2,
+      "taught": false
+    },
+    "your": {
+      "pronoun": "you",
+      "tier": 3,
+      "taught": false
+    },
+    "his": {
+      "pronoun": "he",
+      "tier": 5,
+      "taught": false
+    },
+    "her": {
+      "pronoun": "she",
+      "tier": 5,
+      "taught": false
+    }
+  }
+}

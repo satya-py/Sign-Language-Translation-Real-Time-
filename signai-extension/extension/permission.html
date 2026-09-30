@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>SignAI — allow the camera</title>
+    <link rel="stylesheet" href="popup.css" />
+    <style>
+      /* This one is a full tab, not the 360px popup. */
+      body { width: auto; max-width: 620px; margin: 40px auto; }
+      .big { font-size: 15px; }
+      video { width: 100%; border-radius: 12px; background: #0d1b2a; margin-top: 12px; }
+      ol { padding-left: 20px; }
+      li { margin: 6px 0; }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="mark" aria-hidden="true">ISL</div>
+      <div>
+        <h1>Allow SignAI to use your camera</h1>
+        <p class="sub">Asked once. Nothing leaves your computer.</p>
+      </div>
+    </header>
+
+    <section class="card">
+      <p class="big">
+        Chrome cannot ask for the camera from a toolbar popup: the popup closes the
+        moment the prompt appears, and Chrome then records that as
+        <b>“Permission dismissed”</b>. That is why this page opened in a tab.
+      </p>
+      <ol>
+        <li>Press <b>Allow camera</b> below.</li>
+        <li>Chrome shows a prompt at the top of this tab — choose <b>Allow</b>.</li>
+        <li>Go back to your call and press <b>Start translating</b> in the popup.</li>
+      </ol>
+      <div class="row buttons">
+        <button id="allow" class="primary">Allow camera</button>
+        <button id="close" class="ghost">Close this tab</button>
+      </div>
+      <p class="hint" id="status">The camera has not been allowed yet.</p>
+      <video id="preview" autoplay muted playsinline hidden></video>
+    </section>
+
+    <section class="card">
+      <summary style="font-weight:600">If you pressed Block earlier</summary>
+      <p class="hint">
+        Open <code>chrome://settings/content/camera</code>, find this extension in
+        the blocked list and remove it, then come back and press Allow camera.
+      </p>
+    </section>
+
+    <script src="permission.js"></script>
+  </body>
+</html>

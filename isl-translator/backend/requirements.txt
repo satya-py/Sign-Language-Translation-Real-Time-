@@ -1,0 +1,27 @@
+# Backend dependencies for a server (Render, Fly, a VM, Docker).
+#
+# Two choices here are not cosmetic:
+#
+#   * torch comes from PyTorch's CPU index. The default PyPI wheel carries the
+#     CUDA runtime - about 2.5 GB - which no free or small host will build, and
+#     which is useless without a GPU anyway. The classifier is 0.82M parameters;
+#     on CPU it answers in a few milliseconds.
+#   * opencv-python-headless, not opencv-python: the GUI build needs libGL and a
+#     display, neither of which a server has. mediapipe pulls in
+#     opencv-contrib-python of its own accord, which is why the Dockerfile
+#     installs libgl1 as well.
+#
+# Local development uses the existing venv (INCLUDE/venv) and does not need this
+# file at all.
+
+--extra-index-url https://download.pytorch.org/whl/cpu
+
+fastapi==0.115.6
+uvicorn[standard]==0.34.0
+websockets==14.1
+python-multipart==0.0.20
+
+torch==2.5.1
+numpy==1.26.4
+opencv-python-headless==4.10.0.84
+mediapipe==0.10.14

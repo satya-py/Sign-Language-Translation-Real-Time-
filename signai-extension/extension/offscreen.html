@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>SignAI capture</title>
+  </head>
+  <body>
+    <!--
+      Never shown to anyone. It exists because a Manifest V3 service worker has no
+      DOM, and the two things this extension cannot do without both need one:
+      getUserMedia for the camera, and speechSynthesis for the voice.
+    -->
+    <video id="camera" autoplay muted playsinline></video>
+    <canvas id="frame" width="640" height="480"></canvas>
+    <script src="offscreen.js"></script>
+  </body>
+</html>
